@@ -15,6 +15,7 @@ finishers:
       senderAddress: 'mail@examle.com'
       senderName: '{firstName} {lastName}'
       replyToAddress: '{email}'
+      templatePathAndFilename: 'EXT:z7_blog_comments/Resources/Private/Templates/Finishers/EmailToReceiver.html'
   -
     identifier: Confirmation
     options:
