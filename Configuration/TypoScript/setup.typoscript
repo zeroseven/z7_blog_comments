@@ -10,3 +10,17 @@ plugin.tx_z7blog {
 ################################################
 plugin.tx_form.settings.yamlConfigurations.1599049654 = EXT:z7_blog_comments/Configuration/Yaml/BaseSetup.yaml
 module.tx_form.settings.yamlConfigurations.1599049654 = EXT:z7_blog_comments/Configuration/Yaml/BaseSetup.yaml
+
+################################################
+# Configure comment form
+################################################
+lib.Z7BlogCommentsForm = USER
+lib.Z7BlogCommentsForm {
+  userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+  extensionName = Form
+  pluginName = Formframework
+  vendorName = TYPO3\CMS
+  settings {
+    persistenceIdentifier = EXT:z7_blog_comments/Resources/Private/Yaml/Forms/BlogComment.form.yaml
+  }
+}
