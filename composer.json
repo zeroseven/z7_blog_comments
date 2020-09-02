@@ -2,7 +2,7 @@
   "name": "zeroseven/z7-blog-comments",
   "license": "GPL-2.0-only",
   "type": "typo3-cms-extension",
-  "description": "z7_blog RSS-feed",
+  "description": "z7_blog comments",
   "authors": [
     {
       "name": "zeroseven design studios GmbH",
