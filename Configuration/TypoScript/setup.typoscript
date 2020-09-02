@@ -1,0 +1,12 @@
+#####################################################
+# Extend plugin settings
+#####################################################
+plugin.tx_z7blog {
+
+}
+
+################################################
+# Register configuration
+################################################
+plugin.tx_form.settings.yamlConfigurations.1599049654 = EXT:z7_blog_comments/Configuration/Yaml/BaseSetup.yaml
+module.tx_form.settings.yamlConfigurations.1599049654 = EXT:z7_blog_comments/Configuration/Yaml/BaseSetup.yaml

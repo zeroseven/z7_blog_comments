@@ -1,0 +1,31 @@
+{
+  "name": "zeroseven/z7-blog-comments",
+  "license": "GPL-2.0-only",
+  "type": "typo3-cms-extension",
+  "description": "z7_blog RSS-feed",
+  "authors": [
+    {
+      "name": "zeroseven design studios GmbH",
+      "email": "typo3@zeroseven.de",
+      "homepage": "https://www.zeroseven.de/",
+      "role": "Company"
+    },
+    {
+      "name": "Raphael Thanner",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^10.4",
+    "typo3/cms-form": "^10.4",
+    "zeroseven/z7-blog": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zeroseven\\Z7BlogComments\\": "Classes"
+    }
+  },
+  "replace": {
+    "zeroseven/z7-blog-comments": "self.version"
+  }
+}

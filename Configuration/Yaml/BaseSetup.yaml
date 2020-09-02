@@ -1,0 +1,15 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                translation:
+                  translationFiles:
+                    1585640524: 'EXT:z7_blog_comments/Resources/Private/Language/locallang.xlf'
+
+      persistenceManager:
+        allowedExtensionPaths:
+          1599049758: 'EXT:z7_blog_comments/Resources/Private/Yaml/Forms/'
