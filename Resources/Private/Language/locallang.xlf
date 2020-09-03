@@ -20,6 +20,17 @@
 			<trans-unit id="BlogCommentForm.finisher.Confirmation.message">
 				<source>Thanks for your comment. Please note that activation can take several hours.</source>
 			</trans-unit>
+
+			<!-- EmailToReceiver -->
+			<trans-unit id="EmailToReceiver.control.description">
+				<source>What do you want to do now?</source>
+			</trans-unit>
+			<trans-unit id="EmailToReceiver.control.enable">
+				<source>Activate</source>
+			</trans-unit>
+			<trans-unit id="EmailToReceiver.control.delete">
+				<source>Delete</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

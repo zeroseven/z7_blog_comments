@@ -6,12 +6,15 @@ identifier: BlogCommentForm
 prototypeName: standard
 finishers:
   -
+    # Load this finisher first to make the variables accessible on all other finishers
+    identifier: Z7BlogCommentsVariableProvider
+  -
     identifier: EmailToReceiver
     options:
-      subject: 'New comment on post "{Z7BlogCommentsVariableProvider.post.title}"'
-      # Change this value:
+      subject: 'New comment on post "{Z7BlogComments.post.title}"'
+      # Update or override this value:
       recipientAddress: 'mail@examle.com'
-      # Change this value:
+      # Update or override this value:
       senderAddress: 'mail@examle.com'
       senderName: '{firstName} {lastName}'
       replyToAddress: '{email}'
