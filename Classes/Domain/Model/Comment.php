@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Blog\Blogpages\Domain\Model;
+namespace Zeroseven\Z7BlogComments\Domain\Model;
 
 use DateTime;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -8,10 +8,13 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Comment extends AbstractEntity
 {
 
-    public const STATUS_PENDING = 0;
-    public const STATUS_APPROVED = 1;
-    public const STATUS_DECLINED = 2;
-    public const STATUS_DELETED = 3;
+    public const STATE_PENDING = 0;
+    public const STATE_APPROVED = 1;
+    public const STATE_DECLINED = 2;
+    public const STATE_DELETED = 3;
+
+    /** @var string */
+    protected $lang;
 
     /** @var string */
     protected $firstName;
@@ -29,10 +32,21 @@ class Comment extends AbstractEntity
     protected $comment;
 
     /** @var int */
-    protected $status;
+    protected $state;
 
     /** @var \DateTime */
     protected $createDate;
+
+    public function getLang(): string
+    {
+        return $this->lang;
+    }
+
+    public function setLang(string $lang): self
+    {
+        $this->lang = $lang;
+        return $this;
+    }
 
     public function getFirstName(): string
     {
@@ -89,14 +103,14 @@ class Comment extends AbstractEntity
         return $this;
     }
 
-    public function getStatus(): int
+    public function getState(): int
     {
-        return $this->status;
+        return $this->state;
     }
 
-    public function setStatus(int $status): self
+    public function setState(int $state): self
     {
-        $this->status = $status;
+        $this->state = $state;
         return $this;
     }
 
