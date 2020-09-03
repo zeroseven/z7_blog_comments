@@ -6,6 +6,21 @@
 			<trans-unit id="pages.post_comments">
 				<source>Comments</source>
 			</trans-unit>
+			<trans-unit id="pages.post_comments_mode">
+				<source>Comment mode</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comments_mode.div.enable">
+				<source>Enable</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comments_mode.0">
+				<source>Read and write</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comments_mode.1">
+				<source>Read (only)</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comments_mode.2">
+				<source>Disabled</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
