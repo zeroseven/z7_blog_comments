@@ -4,6 +4,7 @@ namespace Zeroseven\Z7BlogComments\Domain\Model;
 
 use DateTime;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Annotation\ORM as Extbase;
 
 class Comment extends AbstractEntity
 {
@@ -36,6 +37,12 @@ class Comment extends AbstractEntity
 
     /** @var \DateTime */
     protected $createDate;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Zeroseven\Z7BlogComments\Domain\Model\Comment>
+     * @Extbase\Cascade("remove")
+     */
+    protected $children;
 
     public function getLang(): string
     {
@@ -119,10 +126,19 @@ class Comment extends AbstractEntity
         return $this->createDate;
     }
 
-    public function setCreateDate(DateTime $createDate): self
+    public function setCreateDate(DateTime $date = null): self
     {
-        $this->createDate = $createDate;
+        $this->createDate = $date ?: time();
         return $this;
     }
 
+    public function getChildren(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    {
+        return $this->children;
+    }
+
+    public function setChildren(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $children): void
+    {
+        $this->children = $children;
+    }
 }
