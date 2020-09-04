@@ -14,6 +14,9 @@ call_user_func(static function(string $table, int $dokType) {
                 'type' => 'inline',
                 'foreign_table' => 'tx_z7blog_domain_model_comment',
                 'foreign_field' => 'pid',
+                'foreign_match_fields' => [
+                  'parent' => '0'
+                ],
                 'minitems' => 0,
                 'maxitems' => 100,
                 'appearance' => [
