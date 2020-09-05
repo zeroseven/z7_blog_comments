@@ -13,6 +13,8 @@ TYPO3:
           finishersDefinition:
             Z7BlogCommentsVariableProvider:
               implementationClassName: 'Zeroseven\Z7BlogComments\Domain\Finishers\Z7BlogCommentsVariableProvider'
+            Z7BlogCommentsDatabaseFinisher:
+              implementationClassName: 'Zeroseven\Z7BlogComments\Domain\Finishers\Z7BlogCommentsDatabaseFinisher'
 
       persistenceManager:
         allowedExtensionPaths:

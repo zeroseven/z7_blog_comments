@@ -38,6 +38,12 @@ class Comment extends AbstractEntity
     /** @var \DateTime */
     protected $createDate;
 
+    /** @var string */
+    protected $remoteAddress;
+
+    /** @var string */
+    protected $userAgent;
+
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Zeroseven\Z7BlogComments\Domain\Model\Comment>
      * @Extbase\Cascade("remove")
@@ -140,5 +146,27 @@ class Comment extends AbstractEntity
     public function setChildren(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $children): void
     {
         $this->children = $children;
+    }
+
+    public function getRemoteAddress(): string
+    {
+        return $this->remoteAddress;
+    }
+
+    public function setRemoteAddress(string $remoteAddress): self
+    {
+        $this->remoteAddress = $remoteAddress;
+        return $this;
+    }
+
+    public function getUserAgent(): string
+    {
+        return $this->userAgent;
+    }
+
+    public function setUserAgent(string $userAgent): self
+    {
+        $this->userAgent = $userAgent;
+        return $this;
     }
 }

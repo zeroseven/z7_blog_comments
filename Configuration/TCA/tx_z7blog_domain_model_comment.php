@@ -64,6 +64,16 @@ return [
                 ]
             ]
         ],
+        'crdate' => [
+            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.children',
+            'config' => [
+                'readOnly' => true,
+                'type' => 'input',
+                'renderType' => 'inputDateTime',
+                'size' => 10,
+                'eval' => 'date'
+            ]
+        ],
         'firstname' => [
             'exclude' => false,
             'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.firstname',
@@ -152,16 +162,21 @@ return [
                 'type' => 'passthrough'
             ]
         ],
-        'crdate' => [
-            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.children',
+        'state' => [
             'config' => [
-                'readOnly' => true,
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 10,
-                'eval' => 'date'
+                'type' => 'passthrough'
             ]
-        ]
+        ],
+        'remote_address' => [
+            'config' => [
+                'type' => 'passthrough'
+            ]
+        ],
+        'user_agent' => [
+            'config' => [
+                'type' => 'passthrough'
+            ]
+        ],
     ]
 ];
 

@@ -9,6 +9,8 @@ finishers:
     # Load this finisher first to make the variables accessible on all other finishers
     identifier: Z7BlogCommentsVariableProvider
   -
+    identifier: Z7BlogCommentsDatabaseFinisher
+  -
     identifier: EmailToReceiver
     options:
       subject: 'New comment on post "{Z7BlogComments.post.title}"'
@@ -34,7 +36,7 @@ renderables:
       -
         defaultValue: ''
         type: Text
-        identifier: firstName
+        identifier: firstname
         label: 'Handle translations by the locallang.xlf file'
         properties:
           fluidAdditionalAttributes:
@@ -44,7 +46,7 @@ renderables:
       -
         defaultValue: ''
         type: Text
-        identifier: lastName
+        identifier: lastname
         label: 'Handle translations by the locallang.xlf file'
         properties:
           fluidAdditionalAttributes:

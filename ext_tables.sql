@@ -14,6 +14,8 @@ CREATE TABLE tx_z7blog_domain_model_comment (
 	comment text NOT NULL,
 	children int(11) unsigned NOT NULL default '0',
 	parent int(11) unsigned NOT NULL default '0',
+	remote_address varchar(255) DEFAULT '' NOT NULL,
+	user_agent varchar(255) DEFAULT '' NOT NULL,
 
 	PRIMARY KEY (uid),
 	KEY parent (pid)
