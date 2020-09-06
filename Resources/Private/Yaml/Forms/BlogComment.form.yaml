@@ -36,7 +36,7 @@ renderables:
       -
         defaultValue: ''
         type: Text
-        identifier: firstname
+        identifier: firstName
         label: 'Handle translations by the locallang.xlf file'
         properties:
           fluidAdditionalAttributes:
@@ -46,7 +46,7 @@ renderables:
       -
         defaultValue: ''
         type: Text
-        identifier: lastname
+        identifier: lastName
         label: 'Handle translations by the locallang.xlf file'
         properties:
           fluidAdditionalAttributes:

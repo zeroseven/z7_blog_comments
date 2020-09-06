@@ -2,9 +2,8 @@
 
 namespace Zeroseven\Z7BlogComments\Domain\Finishers;
 
+use DateTime;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 use Zeroseven\Z7BlogComments\Domain\Model\Comment;
@@ -15,18 +14,22 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
     protected function executeInternal()
     {
 
-        // Collect properties
-        $properties = array_merge([
-            'crdate' => time(),
-            'state' => 0,
-            'pid' => $GLOBALS['TSFE']->id,
-            'remote_address' => $_SERVER['REMOTE_ADDR'],
-            'user_agent' => $_SERVER['HTTP_USER_AGENT']
-        ], $this->finisherContext->getFormValues());
+        // Build new comment
+        $comment = GeneralUtility::makeInstance(Comment::class)
+            ->setCreateDate(new DateTime('now'))
+            ->setState(Comment::STATE_PENDING)
+            ->setRemoteAddress($_SERVER['REMOTE_ADDR'])
+            ->setUserAgent($_SERVER['HTTP_USER_AGENT']);
 
-        // Build extbase comment object
-        $dataMapper = $this->objectManager->get(DataMapper::class);
-        $comment = empty($results = $dataMapper->map(Comment::class, [$properties])) ? null : $results[0];
+        // Set storage pid
+        $comment->setPid($GLOBALS['TSFE']->id);
+
+        // Loop form and apply properties
+        foreach ($this->finisherContext->getFormValues() ?? [] as $key => $value) {
+            if($comment->_hasProperty($key)) {
+                $comment->_setProperty($key, $value);
+            }
+        }
 
         // Write to database
         $this->objectManager->get(CommentRepository::class)->add($comment);
