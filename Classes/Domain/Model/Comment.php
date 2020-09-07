@@ -19,6 +19,9 @@ class Comment extends AbstractEntity
     /** @var bool */
     protected $hidden;
 
+    /** @var int */
+    protected $sysLanguageUid;
+
     /** @var string */
     protected $lang;
 
@@ -74,6 +77,17 @@ class Comment extends AbstractEntity
     public function setHidden(bool $state): self
     {
         $this->hidden = $state;
+        return $this;
+    }
+
+    public function getSysLanguageUid(): int
+    {
+        return $this->sysLanguageUid;
+    }
+
+    public function setSysLanguageUid(int $id): self
+    {
+        $this->sysLanguageUid = $id;
         return $this;
     }
 

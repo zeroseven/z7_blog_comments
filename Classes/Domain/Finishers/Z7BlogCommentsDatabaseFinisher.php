@@ -3,6 +3,7 @@
 namespace Zeroseven\Z7BlogComments\Domain\Finishers;
 
 use DateTime;
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
@@ -23,6 +24,7 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
             ->setCreateDate(new DateTime('now'))
             ->setHidden(true)
             ->setPending(true)
+            ->setSysLanguageUid(GeneralUtility::makeInstance(Context::class)->getPropertyFromAspect('language', 'id', 0))
             ->setRemoteAddress($_SERVER['REMOTE_ADDR'])
             ->setUserAgent($_SERVER['HTTP_USER_AGENT'])
             ->setPermissionKey(ControlService::createRandomString());
