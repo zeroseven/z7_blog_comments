@@ -31,6 +31,9 @@
 			<trans-unit id="EmailToReceiver.control.enable">
 				<source>Activate</source>
 			</trans-unit>
+			<trans-unit id="EmailToReceiver.control.reject">
+				<source>Reject</source>
+			</trans-unit>
 			<trans-unit id="EmailToReceiver.control.delete">
 				<source>Delete</source>
 			</trans-unit>

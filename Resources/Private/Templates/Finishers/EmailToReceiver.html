@@ -1,4 +1,5 @@
 {namespace formvh=TYPO3\CMS\Form\ViewHelpers}
+{namespace blogComments=Zeroseven\Z7BlogComments\ViewHelpers}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,14 +51,19 @@
 </table>
 
 <f:comment><!-- The template above is a copy of template EXT:form/Resources/Private/Frontend/Templates/Finishers/Email/Html.html --></f:comment>
+<hr />
+
 <p>
-	{f:translate(key: 'EmailToReceiver.control.description', extensionName: 'z7_blog_comments')}
+	<strong>{f:translate(key: 'EmailToReceiver.control.description', extensionName: 'z7_blog_comments')}</strong>
 </p>
 <p>
-	<a style="display:inline-block;text-decoration:none;border-radius:0.2em;padding:0.3em 1em;color:#fff;background:#2ecc71;" href="{finisherVariableProvider.Z7BlogComments.link.enable}" target="_blank">
+	<a style="display:inline-block;text-decoration:none;border-radius:0.2em;padding:0.3em 1em;color:#fff;background:#2ecc71;" href="{blogComments:uri.enable(comment:finisherVariableProvider.Z7BlogComments.comment)}" target="_blank">
 		{f:translate(key: 'EmailToReceiver.control.enable', extensionName: 'z7_blog_comments')}
 	</a>
-	<a style="display:inline-block;text-decoration:none;border-radius:0.2em;padding:0.3em 1em;color:#fff;background:#e74c3c;" href="{finisherVariableProvider.Z7BlogComments.link.delete}" target="_blank">
+	<a style="display:inline-block;text-decoration:none;border-radius:0.2em;padding:0.3em 1em;color:#fff;background:#e67e22;" href="{blogComments:uri.reject(comment:finisherVariableProvider.Z7BlogComments.comment)}" target="_blank">
+		{f:translate(key: 'EmailToReceiver.control.reject', extensionName: 'z7_blog_comments')}
+	</a>
+	<a style="display:inline-block;text-decoration:none;border-radius:0.2em;padding:0.3em 1em;color:#fff;background:#c0392b;" href="{blogComments:uri.delete(comment:finisherVariableProvider.Z7BlogComments.comment)}" target="_blank">
 		{f:translate(key: 'EmailToReceiver.control.delete', extensionName: 'z7_blog_comments')}
 	</a>
 </p>

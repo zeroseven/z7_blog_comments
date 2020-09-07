@@ -9,9 +9,11 @@ use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 use Zeroseven\Z7Blog\Service\RepositoryService;
 use Zeroseven\Z7BlogComments\Domain\Model\Comment;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
+use Zeroseven\Z7BlogComments\Service\ControlService;
 
 class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
 {
+
     protected function executeInternal()
     {
 
@@ -22,7 +24,8 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
             ->setHidden(true)
             ->setPending(true)
             ->setRemoteAddress($_SERVER['REMOTE_ADDR'])
-            ->setUserAgent($_SERVER['HTTP_USER_AGENT']);
+            ->setUserAgent($_SERVER['HTTP_USER_AGENT'])
+            ->setPermissionKey(ControlService::createRandomString());
 
         // Loop form and apply properties
         foreach ($this->finisherContext->getFormValues() ?? [] as $key => $value) {

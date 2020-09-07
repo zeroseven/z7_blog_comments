@@ -34,6 +34,9 @@ class Comment extends AbstractEntity
     /** @var string */
     protected $comment;
 
+    /** @var string */
+    protected $permissionKey;
+
     /** @var bool */
     protected $pending;
 
@@ -129,6 +132,17 @@ class Comment extends AbstractEntity
         return $this;
     }
 
+    public function getPermissionKey(): string
+    {
+        return $this->permissionKey;
+    }
+
+    public function setPermissionKey(string $permissionKey): self
+    {
+        $this->permissionKey = $permissionKey;
+        return $this;
+    }
+
     public function isPending(): bool
     {
         return $this->pending;
@@ -182,4 +196,5 @@ class Comment extends AbstractEntity
         $this->userAgent = $userAgent;
         return $this;
     }
+
 }

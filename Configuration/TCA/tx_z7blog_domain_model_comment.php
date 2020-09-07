@@ -180,6 +180,11 @@ return [
             'config' => [
                 'type' => 'passthrough'
             ]
+        ],
+        'permission_key' => [
+            'config' => [
+                'type' => 'passthrough'
+            ]
         ]
     ]
 ];
