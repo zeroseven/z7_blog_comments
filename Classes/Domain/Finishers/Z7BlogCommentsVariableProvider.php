@@ -13,6 +13,8 @@ use Zeroseven\Z7Blog\Service\SettingsService;
 class Z7BlogCommentsVariableProvider extends AbstractFinisher
 {
 
+    public const IDENTIFIER = 'Z7BlogComments';
+
     /** @var array */
     protected $defaultOptions = [
         'post' => null,
@@ -22,24 +24,21 @@ class Z7BlogCommentsVariableProvider extends AbstractFinisher
     public function __construct(string $finisherIdentifier = '')
     {
         // Remove the string "VariableProvider" to make it accessible by "{finisherVariableProvider.Z7BlogComments}"
-        parent::__construct(str_replace('VariableProvider', '', $finisherIdentifier));
+        parent::__construct(self::IDENTIFIER);
+    }
+
+    public function addVariable(string $key, $value): void
+    {
+        $this->finisherContext->getFinisherVariableProvider()->add($this->shortFinisherIdentifier, $key, $value ?: null);
     }
 
     protected function executeInternal()
     {
 
         // Load extension settings
-        $this->finisherContext->getFinisherVariableProvider()->add(
-            $this->shortFinisherIdentifier,
-            'settings',
-            SettingsService::getSettings() ?: null
-        );
+        $this->addVariable('settings', SettingsService::getSettings());
 
         // Load post
-        $this->finisherContext->getFinisherVariableProvider()->add(
-            $this->shortFinisherIdentifier,
-            'post',
-            RepositoryService::getPostRepository()->findByUid($this->getTypoScriptFrontendController()->id) ?: null
-        );
+        $this->addVariable('post', RepositoryService::getPostRepository()->findByUid($this->getTypoScriptFrontendController()->id));
     }
 }

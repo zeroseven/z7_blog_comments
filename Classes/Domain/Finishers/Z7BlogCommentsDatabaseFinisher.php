@@ -34,5 +34,8 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
         // Write to database
         $this->objectManager->get(CommentRepository::class)->add($comment);
         $this->objectManager->get(PersistenceManager::class)->persistAll();
+
+        // Add comment to variable provider
+        $this->finisherContext->getFinisherVariableProvider()->add('Z7BlogComments','comment', $comment);
     }
 }
