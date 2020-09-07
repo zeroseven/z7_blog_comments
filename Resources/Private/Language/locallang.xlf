@@ -5,14 +5,17 @@
 		<body>
 
 			<!-- BlogCommentForm.form.yaml -->
-			<trans-unit id="BlogCommentForm.element.firstName.properties.label">
-				<source>First name</source>
-			</trans-unit>
-			<trans-unit id="BlogCommentForm.element.lastName.properties.label">
-				<source>Last name</source>
+			<trans-unit id="BlogCommentForm.element.name.properties.label">
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="BlogCommentForm.element.email.properties.label">
 				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="BlogCommentForm.element.url.properties.label">
+				<source>Url</source>
+			</trans-unit>
+			<trans-unit id="BlogCommentForm.element.comment.properties.label">
+				<source>Your comment</source>
 			</trans-unit>
 			<trans-unit id="BlogCommentForm.element.comment.properties.label">
 				<source>Your comment</source>

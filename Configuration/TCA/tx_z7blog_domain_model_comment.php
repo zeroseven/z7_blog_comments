@@ -13,7 +13,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden'
         ],
-        'searchFields' => 'firstname, lastname, email, url, comment',
+        'searchFields' => 'name, email, url, comment',
         'typeicon_classes' => [
             'default' => 'plugin-z7blog-author'
         ]
@@ -23,10 +23,6 @@ return [
             'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.overview',
             'showitem' => 'lang, crdate'
         ],
-        'name' => [
-            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.name',
-            'showitem' => 'firstname, lastname'
-        ],
         'links' => [
             'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.links',
             'showitem' => 'email, url'
@@ -34,7 +30,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => 'hidden, --palette--;;overview, --palette--;;name, --palette--;;links, comment, children, parent'
+            'showitem' => 'hidden, --palette--;;overview, --palette--;;links, name, comment, children, parent'
         ]
     ],
     'columns' => [
@@ -74,18 +70,9 @@ return [
                 'eval' => 'date'
             ]
         ],
-        'firstname' => [
+        'name' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.firstname',
-            'config' => [
-                'type' => 'input',
-                'eval' => 'trim',
-                'default' => ''
-            ]
-        ],
-        'lastname' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lastname',
+            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.name',
             'config' => [
                 'type' => 'input',
                 'eval' => 'trim',
@@ -162,7 +149,7 @@ return [
                 'type' => 'passthrough'
             ]
         ],
-        'state' => [
+        'pending' => [
             'config' => [
                 'type' => 'passthrough'
             ]
@@ -176,7 +163,7 @@ return [
             'config' => [
                 'type' => 'passthrough'
             ]
-        ],
+        ]
     ]
 ];
 

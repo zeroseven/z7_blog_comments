@@ -14,12 +14,6 @@ return [
     \Zeroseven\Z7BlogComments\Domain\Model\Comment::class => [
         'tableName' => 'tx_z7blog_domain_model_comment',
         'properties' => [
-            'firstName' => [
-                'fieldName' => 'firstname'
-            ],
-            'lastName' => [
-                'fieldName' => 'lastname'
-            ],
             'createDate' => [
                 'fieldName' => 'crdate'
             ]

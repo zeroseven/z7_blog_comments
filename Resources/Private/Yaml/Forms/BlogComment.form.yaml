@@ -18,7 +18,7 @@ finishers:
       recipientAddress: 'mail@examle.com'
       # Update or override this value:
       senderAddress: 'mail@examle.com'
-      senderName: '{firstName} {lastName}'
+      senderName: '{name}'
       replyToAddress: '{email}'
       templatePathAndFilename: 'EXT:z7_blog_comments/Resources/Private/Templates/Finishers/EmailToReceiver.html'
   -
@@ -36,17 +36,7 @@ renderables:
       -
         defaultValue: ''
         type: Text
-        identifier: firstName
-        label: 'Handle translations by the locallang.xlf file'
-        properties:
-          fluidAdditionalAttributes:
-            required: required
-        validators:
-          -  identifier: NotEmpty
-      -
-        defaultValue: ''
-        type: Text
-        identifier: lastName
+        identifier: name
         label: 'Handle translations by the locallang.xlf file'
         properties:
           fluidAdditionalAttributes:
@@ -64,6 +54,11 @@ renderables:
         validators:
           -  identifier: EmailAddress
           -  identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: url
+        label: 'Handle translations by the locallang.xlf file'
       -
         defaultValue: ''
         type: Textarea

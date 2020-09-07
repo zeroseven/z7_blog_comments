@@ -17,7 +17,7 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
         // Build new comment
         $comment = GeneralUtility::makeInstance(Comment::class)
             ->setCreateDate(new DateTime('now'))
-            ->setState(Comment::STATE_PENDING)
+            ->setPending(true)
             ->setRemoteAddress($_SERVER['REMOTE_ADDR'])
             ->setUserAgent($_SERVER['HTTP_USER_AGENT']);
 

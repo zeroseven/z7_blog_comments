@@ -9,19 +9,11 @@ use TYPO3\CMS\Extbase\Annotation\ORM as Extbase;
 class Comment extends AbstractEntity
 {
 
-    public const STATE_PENDING = 0;
-    public const STATE_APPROVED = 1;
-    public const STATE_DECLINED = 2;
-    public const STATE_DELETED = 3;
-
     /** @var string */
     protected $lang;
 
     /** @var string */
-    protected $firstName;
-
-    /** @var string */
-    protected $lastName;
+    protected $name;
 
     /** @var string */
     protected $email;
@@ -32,8 +24,8 @@ class Comment extends AbstractEntity
     /** @var string */
     protected $comment;
 
-    /** @var int */
-    protected $state;
+    /** @var bool */
+    protected $pending;
 
     /** @var \DateTime */
     protected $createDate;
@@ -61,25 +53,14 @@ class Comment extends AbstractEntity
         return $this;
     }
 
-    public function getFirstName(): string
+    public function getName(): string
     {
-        return $this->firstName;
+        return $this->name;
     }
 
-    public function setFirstName(string $firstName): self
+    public function setName(string $name): self
     {
-        $this->firstName = $firstName;
-        return $this;
-    }
-
-    public function getLastName(): string
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): self
-    {
-        $this->lastName = $lastName;
+        $this->name = $name;
         return $this;
     }
 
@@ -116,14 +97,14 @@ class Comment extends AbstractEntity
         return $this;
     }
 
-    public function getState(): int
+    public function isPending(): bool
     {
-        return $this->state;
+        return $this->pending;
     }
 
-    public function setState(int $state): self
+    public function setPending(bool $state): self
     {
-        $this->state = $state;
+        $this->pending = $state;
         return $this;
     }
 
