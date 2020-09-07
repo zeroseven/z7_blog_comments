@@ -14,6 +14,9 @@ return [
     \Zeroseven\Z7BlogComments\Domain\Model\Comment::class => [
         'tableName' => 'tx_z7blog_domain_model_comment',
         'properties' => [
+            'post' => [
+                'fieldName' => 'pid'
+            ],
             'createDate' => [
                 'fieldName' => 'crdate'
             ]

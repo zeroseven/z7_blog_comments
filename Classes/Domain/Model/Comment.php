@@ -5,9 +5,19 @@ namespace Zeroseven\Z7BlogComments\Domain\Model;
 use DateTime;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Annotation\ORM as Extbase;
+use Zeroseven\Z7Blog\Domain\Model\Post;
 
 class Comment extends AbstractEntity
 {
+
+    /**
+     * @var \Zeroseven\Z7Blog\Domain\Model\Post
+     * @Extbase\Lazy
+     */
+    protected $post;
+
+    /** @var bool */
+    protected $hidden;
 
     /** @var string */
     protected $lang;
@@ -41,6 +51,28 @@ class Comment extends AbstractEntity
      * @Extbase\Cascade("remove")
      */
     protected $children;
+
+    public function getPost(): Post
+    {
+        return $this->post;
+    }
+
+    public function setPost(Post $post): self
+    {
+        $this->post = $post;
+        return $this;
+    }
+
+    public function isHidden(): bool
+    {
+        return $this->hidden;
+    }
+
+    public function setHidden(bool $hidden): self
+    {
+        $this->hidden = $hidden;
+        return $this;
+    }
 
     public function getLang(): string
     {

@@ -6,6 +6,7 @@ use DateTime;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
+use Zeroseven\Z7Blog\Service\RepositoryService;
 use Zeroseven\Z7BlogComments\Domain\Model\Comment;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
@@ -16,13 +17,12 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
 
         // Build new comment
         $comment = GeneralUtility::makeInstance(Comment::class)
+            ->setPost(RepositoryService::getPostRepository()->findByUid($this->getTypoScriptFrontendController()->id))
             ->setCreateDate(new DateTime('now'))
+            ->setHidden(true)
             ->setPending(true)
             ->setRemoteAddress($_SERVER['REMOTE_ADDR'])
             ->setUserAgent($_SERVER['HTTP_USER_AGENT']);
-
-        // Set storage pid
-        $comment->setPid($GLOBALS['TSFE']->id);
 
         // Loop form and apply properties
         foreach ($this->finisherContext->getFormValues() ?? [] as $key => $value) {

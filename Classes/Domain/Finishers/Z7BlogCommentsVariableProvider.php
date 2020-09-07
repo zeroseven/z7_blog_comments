@@ -17,10 +17,6 @@ class Z7BlogCommentsVariableProvider extends AbstractFinisher
     protected $defaultOptions = [
         'post' => null,
         'settings' => [],
-        'link' => [
-            'delete' => '',
-            'enable' => ''
-        ]
     ];
 
     public function __construct(string $finisherIdentifier = '')
@@ -31,17 +27,6 @@ class Z7BlogCommentsVariableProvider extends AbstractFinisher
 
     protected function executeInternal()
     {
-
-        // Create control links
-        $this->finisherContext->getFinisherVariableProvider()->add(
-            $this->shortFinisherIdentifier,
-            'link',
-            [
-                // Todo create links to enable or delete comments
-                'delete' => 'https://example.com/?action=delete',
-                'enable' => 'https://example.com/?action=enable'
-            ]
-        );
 
         // Load extension settings
         $this->finisherContext->getFinisherVariableProvider()->add(

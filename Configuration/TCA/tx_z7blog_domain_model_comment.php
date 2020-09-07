@@ -19,18 +19,22 @@ return [
         ]
     ],
     'palettes' => [
-        'overview' => [
-            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.overview',
-            'showitem' => 'lang, crdate'
+        'general' => [
+            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.general',
+            'showitem' => 'hidden, lang, crdate'
         ],
-        'links' => [
-            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.links',
-            'showitem' => 'email, url'
+        'author' => [
+            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.author',
+            'showitem' => 'name, email, url'
+        ],
+        'info' => [
+            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.info',
+            'showitem' => 'remote_address, user_agent'
         ]
     ],
     'types' => [
         '1' => [
-            'showitem' => 'hidden, --palette--;;overview, --palette--;;links, name, comment, children, parent'
+            'showitem' => '--palette--;;general, --palette--;;author, comment, children, parent, --palette--;;info'
         ]
     ],
     'columns' => [
@@ -144,22 +148,35 @@ return [
                 ]
             ]
         ],
+        'remote_address' => [
+            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.remote_address',
+            'exclude' => true,
+            'config' => [
+                'readOnly' => true,
+                'type' => 'input',
+                'size' => 10,
+            ]
+        ],
+        'user_agent' => [
+            'label' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.user_agent',
+            'exclude' => true,
+            'config' => [
+                'readOnly' => true,
+                'type' => 'input',
+                'size' => 10,
+            ]
+        ],
+        'pid' => [
+            'config' => [
+                'type' => 'passthrough'
+            ]
+        ],
         'parent' => [
             'config' => [
                 'type' => 'passthrough'
             ]
         ],
         'pending' => [
-            'config' => [
-                'type' => 'passthrough'
-            ]
-        ],
-        'remote_address' => [
-            'config' => [
-                'type' => 'passthrough'
-            ]
-        ],
-        'user_agent' => [
             'config' => [
                 'type' => 'passthrough'
             ]
