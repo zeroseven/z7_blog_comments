@@ -22,4 +22,28 @@ class CommentRepository extends AbstractRepository
         return CommentDemand::makeInstance();
     }
 
+    public function findByPermissionKey(string $key, bool $respectRestrictions = null)
+    {
+
+        // Respect restrictions on query
+        if($respectRestrictions) {
+            return parent::findOneByPermissionKey($key);
+        }
+
+        // Create query
+        $query = $this->createQuery();
+
+        // Configure database query
+        $query->setLimit(1);
+        $query->matching(
+            $query->equals('permission_key', $key)
+        );
+
+        // Allow hidden pages
+        $query->getQuerySettings()->setIgnoreEnableFields(true)->setIncludeDeleted(true);
+
+        // Get posts and store and return the first one …
+        return ($posts = $query->execute()) ? $posts->getFirst() : null;
+    }
+
 }

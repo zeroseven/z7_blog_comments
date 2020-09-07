@@ -5,12 +5,22 @@ namespace Zeroseven\Z7BlogComments\Service;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use Zeroseven\Z7BlogComments\Domain\Model\Comment;
+use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
 class ControlService
 {
 
-    public const PARAMETER = 'z7blogcomments';
+    public const PARAMETER = 'tx_z7blogcomments';
+
+    public const STATE_ENABLED = 1;
+
+    public const STATE_REJECTED = 2;
+
+    public const STATE_DELETED = 3;
+
+    public const STATE_EXPIRED = 4;
 
     public static function createRandomString(int $length = null, string $string = null): string
     {
@@ -38,6 +48,7 @@ class ControlService
             ->setCreateAbsoluteUri(true)
             ->setTargetPageUid($pageUid ?: $GLOBALS['TSFE']->id)
             ->setSection('comment-' . $comment->getUid())
+            ->setNoCache(true)
             ->setArguments([self::PARAMETER => [
                 'permission_key' => $comment->getPermissionKey(),
                 'action' => $action
@@ -57,6 +68,62 @@ class ControlService
     public static function createRejectUri(Comment $comment, int $pageUid = null): string
     {
         return self::createUri('reject', $comment, $pageUid);
+    }
+
+    protected static function initializeObjectManager(): ObjectManager
+    {
+        return GeneralUtility::makeInstance(ObjectManager::class);
+    }
+
+    protected static function initializeClass($classname): ?object
+    {
+        return self::initializeObjectManager()->get($classname);
+    }
+
+    protected static function performUpdate(Comment $comment, bool $hide, bool $delete = null): void
+    {
+        $repository = self::initializeClass(CommentRepository::class);
+
+        $repository->update($comment->setPending(false)->setHidden($hide));
+
+        if($delete) {
+            $repository->remove($comment);
+        }
+
+        self::initializeClass(PersistenceManager::class)->persistAll();
+    }
+
+    public static function control(): int
+    {
+
+        if (
+            ($parameter = GeneralUtility::_GET(self::PARAMETER))
+            && ($action = $parameter['action'])
+            && ($permissionKey = $parameter['permission_key'])
+            && ($comment = self::initializeClass(CommentRepository::class)->findByPermissionKey($permissionKey))
+        ) {
+
+            if (!$comment->isPending()) {
+                return self::STATE_EXPIRED;
+            }
+
+            if ($action === 'enable') {
+                self::performUpdate($comment, false);
+                return self::STATE_ENABLED;
+            }
+
+            if ($action === 'reject') {
+                self::performUpdate($comment, true);
+                return self::STATE_REJECTED;
+            }
+
+            if ($action === 'delete') {
+                self::performUpdate($comment, true, true);
+                return self::STATE_DELETED;
+            }
+        }
+
+        return 0;
     }
 
 }

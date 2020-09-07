@@ -71,9 +71,9 @@ class Comment extends AbstractEntity
         return $this->hidden;
     }
 
-    public function setHidden(bool $hidden): self
+    public function setHidden(bool $state): self
     {
-        $this->hidden = $hidden;
+        $this->hidden = $state;
         return $this;
     }
 
