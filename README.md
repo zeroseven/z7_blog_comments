@@ -9,4 +9,4 @@
 * Automatische Spracherkennung
 * Einfacher Spam-Schutz (über `TypoScriptFrontendController->TypoScriptFrontendController` möglich)
 * Widget
-* Clear cache on control
+* Comment reply function in frontend
