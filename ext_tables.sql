@@ -11,7 +11,7 @@ CREATE TABLE tx_z7blog_domain_model_comment (
 	name varchar(255) DEFAULT '' NOT NULL,
 	email varchar(255) DEFAULT '' NOT NULL,
 	url varchar(255) DEFAULT '' NOT NULL,
-	comment text NOT NULL,
+	text text NOT NULL,
 	children int(11) unsigned NOT NULL default '0',
 	parent int(11) unsigned NOT NULL default '0',
 	remote_address varchar(255) DEFAULT '' NOT NULL,

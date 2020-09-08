@@ -2,7 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment',
-        'label' => 'comment',
+        'label' => 'text',
         'label_alt' => 'crdate',
         'label_alt_force' => true,
         'tstamp' => 'tstamp',
@@ -34,7 +34,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;;general, --palette--;;author, comment, children, parent, --palette--;;log'
+            'showitem' => '--palette--;;general, --palette--;;author, text, children, parent, --palette--;;log'
         ]
     ],
     'columns' => [
@@ -120,9 +120,9 @@ return [
                 'default' => ''
             ]
         ],
-        'comment' => [
+        'text' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.comment',
+            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.text',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,

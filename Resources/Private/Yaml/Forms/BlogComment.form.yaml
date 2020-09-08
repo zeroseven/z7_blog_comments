@@ -62,7 +62,7 @@ renderables:
       -
         defaultValue: ''
         type: Textarea
-        identifier: comment
+        identifier: text
         label: 'Handle translations by the locallang.xlf file'
         properties:
           fluidAdditionalAttributes:

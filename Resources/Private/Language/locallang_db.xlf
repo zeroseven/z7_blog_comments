@@ -58,7 +58,7 @@
 			<trans-unit id="tx_z7blog_domain_model_comment.url">
 				<source>Url</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.comment">
+			<trans-unit id="tx_z7blog_domain_model_comment.text">
 				<source>Comment</source>
 			</trans-unit>
 			<trans-unit id="tx_z7blog_domain_model_comment.children">

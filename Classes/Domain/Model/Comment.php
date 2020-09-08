@@ -35,7 +35,7 @@ class Comment extends AbstractEntity
     protected $url;
 
     /** @var string */
-    protected $comment;
+    protected $text;
 
     /** @var string */
     protected $permissionKey;
@@ -135,14 +135,14 @@ class Comment extends AbstractEntity
         return $this;
     }
 
-    public function getComment(): string
+    public function getText(): string
     {
-        return $this->comment;
+        return $this->text;
     }
 
-    public function setComment(string $comment): self
+    public function setText(string $text): self
     {
-        $this->comment = $comment;
+        $this->text = $text;
         return $this;
     }
 

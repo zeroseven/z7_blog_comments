@@ -14,10 +14,7 @@
 			<trans-unit id="BlogCommentForm.element.url.properties.label">
 				<source>Url</source>
 			</trans-unit>
-			<trans-unit id="BlogCommentForm.element.comment.properties.label">
-				<source>Your comment</source>
-			</trans-unit>
-			<trans-unit id="BlogCommentForm.element.comment.properties.label">
+			<trans-unit id="BlogCommentForm.element.text.properties.label">
 				<source>Your comment</source>
 			</trans-unit>
 			<trans-unit id="BlogCommentForm.finisher.Confirmation.message">
