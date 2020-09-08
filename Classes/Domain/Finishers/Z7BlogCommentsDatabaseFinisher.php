@@ -11,6 +11,7 @@ use Zeroseven\Z7Blog\Service\RepositoryService;
 use Zeroseven\Z7BlogComments\Domain\Model\Comment;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 use Zeroseven\Z7BlogComments\Service\ControlService;
+use Zeroseven\Z7BlogComments\Service\LanguageService;
 
 class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
 {
@@ -24,9 +25,9 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
             ->setCreateDate(new DateTime('now'))
             ->setHidden(true)
             ->setPending(true)
-            ->setSysLanguageUid(GeneralUtility::makeInstance(Context::class)->getPropertyFromAspect('language', 'id', 0))
             ->setRemoteAddress($_SERVER['REMOTE_ADDR'])
             ->setUserAgent($_SERVER['HTTP_USER_AGENT'])
+            ->setSysLanguageUid(LanguageService::getLanguageUid())
             ->setPermissionKey(ControlService::createRandomString());
 
         // Loop form and apply properties
@@ -35,6 +36,9 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
                 $comment->_setProperty($key, $value);
             }
         }
+
+        // Detect language of comment
+        $comment->setLang(LanguageService::detectLanguageCode($comment->getText()));
 
         // Write to database
         $this->objectManager->get(CommentRepository::class)->add($comment);
