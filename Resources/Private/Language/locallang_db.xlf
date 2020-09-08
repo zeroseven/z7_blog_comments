@@ -46,6 +46,21 @@
 			<trans-unit id="tx_z7blog_domain_model_comment.lang">
 				<source>Language</source>
 			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.lang.description">
+				<source>Tip: Choose comment language for improved accessibility and seo.</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.recommend">
+				<source>Recommended language</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.auto">
+				<source>Recommended language</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.none">
+				<source>No language selection</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.select">
+				<source>Available languages</source>
+			</trans-unit>
 			<trans-unit id="tx_z7blog_domain_model_comment.crdate">
 				<source>Create date</source>
 			</trans-unit>

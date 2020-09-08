@@ -56,14 +56,17 @@ return [
         'lang' => [
             'exclude' => false,
             'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang',
+            'description' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'minitems' => 1,
                 'maxitems' => 1,
-                'itemsProcFunc' => 'TYPO3\CMS\Core\Service\IsoCodeService->renderIsoCodeSelectDropdown',
+                'itemsProcFunc' => 'Zeroseven\Z7BlogComments\TCA\IsoCodeService->renderIsoCodeSelectDropdown',
                 'items' => [
-                    ['-', '']
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang.div.none', '--div--'],
+                    ['-', ''],
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang.div.select', '--div--']
                 ]
             ]
         ],
