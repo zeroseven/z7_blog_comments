@@ -21,6 +21,55 @@
 			<trans-unit id="pages.post_comments_mode.2">
 				<source>Disabled</source>
 			</trans-unit>
+
+			<trans-unit id="tx_z7blog_domain_model_comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.palette.general">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.palette.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.palette.log">
+				<source>Log</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.hidden">
+				<source>Visibility</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.hidden.0">
+				<source>Active</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.hidden.1">
+				<source>Disabled</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.lang">
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.crdate">
+				<source>Create date</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.url">
+				<source>Url</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.comment">
+				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.children">
+				<source>Reply</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.remote_address">
+				<source>IP</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.user_agent">
+				<source>Browser</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
