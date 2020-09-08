@@ -19,9 +19,9 @@ return [
         ]
     ],
     'palettes' => [
-        'general' => [
-            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.general',
-            'showitem' => 'hidden, --linebreak--, lang'
+        'content' => [
+            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.content',
+            'showitem' => 'text, lang'
         ],
         'author' => [
             'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.author',
@@ -34,7 +34,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;;general, --palette--;;author, text, children, parent, --palette--;;log'
+            'showitem' => 'hidden, --palette--;;general, --palette--;;author, --palette--;;content, children, parent, --palette--;;log'
         ]
     ],
     'columns' => [

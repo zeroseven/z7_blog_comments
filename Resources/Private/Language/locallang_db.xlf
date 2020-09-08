@@ -25,8 +25,8 @@
 			<trans-unit id="tx_z7blog_domain_model_comment">
 				<source>Comment</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.palette.general">
-				<source>General</source>
+			<trans-unit id="tx_z7blog_domain_model_comment.palette.content">
+				<source>Content</source>
 			</trans-unit>
 			<trans-unit id="tx_z7blog_domain_model_comment.palette.author">
 				<source>Author</source>
