@@ -1,0 +1,50 @@
+$blgcmnt-notification-animation-duration: 0.4s;
+$blgcmnt-notification-animation-pause: 6s;
+$blgcmnt-notification-animation-time: $blgcmnt-notification-animation-duration * 2 + $blgcmnt-notification-animation-pause;
+$blgcmnt-notification-animation-status: (
+    'info': #2980b9,
+    'error': #c0392b,
+    'success': #27ae60
+);
+
+%blgcmnt-notification {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 300px;
+    max-width: 80%;
+    padding: 0.5em 1rem;
+    font-size: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: .25rem;
+    z-index: 9999;
+    animation: blgcmnt-notification $blgcmnt-notification-animation-time linear;
+    animation-fill-mode: forwards;
+}
+
+@each $state, $color in $blgcmnt-notification-animation-status {
+    .blgcmnt-notification--#{$state} {
+        @extend %blgcmnt-notification;
+
+        color: $color;
+        background: lighten($color, 50%);
+        border-color: lighten($color, 30%);
+    }
+}
+
+@keyframes blgcmnt-notification {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    #{percentage($blgcmnt-notification-animation-duration / $blgcmnt-notification-animation-time)},
+    #{100% - percentage($blgcmnt-notification-animation-duration / $blgcmnt-notification-animation-time)} {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-33%);
+    }
+}

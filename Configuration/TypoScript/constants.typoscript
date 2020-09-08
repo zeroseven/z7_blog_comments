@@ -1,0 +1,3 @@
+plugin.tx_z7blog.settings.comments {
+  includeCSS.notification = EXT:z7_blog_comments/Resources/Public/Css/Notification.dist.min.css
+}

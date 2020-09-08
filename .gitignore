@@ -1,1 +1,6 @@
 .idea
+node_modules
+Resources/Public/Css/**/*.css
+!Resources/Public/Css/**/*min.css
+Resources/Public/JavaScript/**/*.js
+!Resources/Public/JavaScript/**/*min.js

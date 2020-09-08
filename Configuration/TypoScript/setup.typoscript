@@ -1,8 +1,10 @@
 #####################################################
 # Extend plugin settings
 #####################################################
-plugin.tx_z7blog {
-
+plugin.tx_z7blog.settings {
+  comments {
+    includeCSS.notification = {$plugin.tx_z7blog.settings.comments.includeCSS.notification}
+  }
 }
 
 ################################################

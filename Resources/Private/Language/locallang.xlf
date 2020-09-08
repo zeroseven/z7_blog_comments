@@ -34,6 +34,21 @@
 			<trans-unit id="EmailToReceiver.control.delete">
 				<source>Delete</source>
 			</trans-unit>
+
+			<!-- Control state -->
+			<trans-unit id="control.enabled">
+				<source>Comment is visible now.</source>
+			</trans-unit>
+			<trans-unit id="control.rejected">
+				<source>The comment has been rejected.</source>
+			</trans-unit>
+			<trans-unit id="control.deleted">
+				<source>The comment has been deleted.</source>
+			</trans-unit>
+			<trans-unit id="control.expired">
+				<source>The entry could not be processed, the link has already expired.</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
