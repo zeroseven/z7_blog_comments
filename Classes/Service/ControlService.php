@@ -6,7 +6,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
-use TYPO3\CMS\Extbase\Service\CacheService;
 use Zeroseven\Z7BlogComments\Domain\Model\Comment;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
@@ -87,7 +86,7 @@ class ControlService
 
         $repository->update($comment->setPending(false)->setHidden($hide));
 
-        if($delete) {
+        if ($delete) {
             $repository->remove($comment);
         }
 
@@ -110,10 +109,6 @@ class ControlService
 
             if ($action === 'enable') {
                 self::performUpdate($comment, false);
-
-                // Clear cache on current page
-                self::initializeClass(CacheService::class)->ClearPageCache($comment->getPid());
-
                 return self::STATE_ENABLED;
             }
 
