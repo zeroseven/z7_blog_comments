@@ -4,8 +4,14 @@
 plugin.tx_z7blog.settings {
   comments {
     includeCSS.notification = {$plugin.tx_z7blog.settings.comments.includeCSS.notification}
+    includeJS.notification = {$plugin.tx_z7blog.settings.comments.includeJS.ajax_form}
   }
 }
+
+################################################
+# Include JavaScript
+################################################
+page.includeJSFooter.ajax_form = {$plugin.tx_z7blog.settings.comments.includeJS.ajax_form}
 
 ################################################
 # Register configuration

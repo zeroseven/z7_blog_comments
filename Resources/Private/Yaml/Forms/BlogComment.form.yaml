@@ -1,5 +1,8 @@
 renderingOptions:
   submitButtonLabel: Submit
+  fluidAdditionalAttributes:
+    onsubmit: "Zeroseven.Blog.ajaxForm(this);"
+
 type: Form
 label: BlogComment
 identifier: BlogCommentForm

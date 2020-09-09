@@ -1,3 +1,4 @@
 plugin.tx_z7blog.settings.comments {
   includeCSS.notification = EXT:z7_blog_comments/Resources/Public/Css/Notification.dist.min.css
+  includeJS.ajax_form = EXT:z7_blog_comments/Resources/Public/JavaScript/AjaxForm.dist.min.js
 }

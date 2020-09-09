@@ -19,7 +19,7 @@
     "typo3/cms-core": "^10.4",
     "typo3/cms-form": "^10.4",
     "patrickschur/language-detection": "^4.0",
-    "zeroseven/z7-blog": "*"
+    "zeroseven/z7-blog": ">=0.6"
   },
   "autoload": {
     "psr-4": {

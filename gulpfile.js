@@ -13,7 +13,7 @@ gulp.task('Scss', function (done) {
   // Define the file path
   gulp.src('./Resources/Private/Scss/**/*.scss')
 
-    // Convert scss to css
+  // Convert scss to css
     .pipe(sass().on('error', sass.logError))
 
     // Save an uncompressed file (for debugging)
@@ -35,7 +35,7 @@ gulp.task('JavaScript', done => {
   // Define the file paths
   gulp.src(['./Resources/Private/JavaScript/**/*.js'])
 
-  // Make compatibility to older browser versions
+    // Make compatibility to older browser versions
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
