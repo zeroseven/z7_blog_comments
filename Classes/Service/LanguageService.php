@@ -13,6 +13,11 @@ class LanguageService
         return (int)GeneralUtility::makeInstance(Context::class)->getPropertyFromAspect('language', 'id', 0);
     }
 
+    public static function getLanguageCode(): string
+    {
+        return (string)$GLOBALS['TSFE']->config['config']['language'];
+    }
+
     public static function detectLanguageCode(string $text): string
     {
 

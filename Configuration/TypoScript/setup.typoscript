@@ -8,6 +8,11 @@ plugin.tx_z7blog.settings {
   }
 }
 
+#####################################################
+# Add Layout root paths
+#####################################################
+plugin.tx_z7blog.view.partialRootPaths.1599679732 = EXT:z7_blog_comments/Resources/Private/Partials/
+
 ################################################
 # Include JavaScript
 ################################################

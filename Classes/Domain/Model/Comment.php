@@ -58,6 +58,11 @@ class Comment extends AbstractEntity
      */
     protected $children;
 
+    /**
+     * @var \Zeroseven\Z7BlogComments\Domain\Model\Comment
+     */
+    protected $parent;
+
     public function getPost(): Post
     {
         return $this->post;
@@ -179,16 +184,6 @@ class Comment extends AbstractEntity
         return $this;
     }
 
-    public function getChildren(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
-    {
-        return $this->children;
-    }
-
-    public function setChildren(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $children): void
-    {
-        $this->children = $children;
-    }
-
     public function getRemoteAddress(): string
     {
         return $this->remoteAddress;
@@ -210,5 +205,28 @@ class Comment extends AbstractEntity
         $this->userAgent = $userAgent;
         return $this;
     }
+
+    public function getChildren(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    {
+        return $this->children;
+    }
+
+    public function setChildren(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $children): void
+    {
+        $this->children = $children;
+    }
+
+    public function getParent(): ?Comment
+    {
+        return $this->parent;
+    }
+
+    public function setParent(Comment $parent): self
+    {
+        $this->parent = $parent;
+        return $this;
+    }
+
+
 
 }

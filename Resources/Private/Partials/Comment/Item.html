@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="blgcmnt{f:if(condition:level, then:'--reply-{level}')}" id="comment-{comment.uid}">
+
+	<f:comment><!-- Render author data --></f:comment>
+	<div class="blgcmnt__data">
+		<f:if condition="{comment.name}">
+			<span class="blgcmnt__name">{comment.name}</span>
+		</f:if>
+		<f:if condition="{comment.url}">
+			<f:link.external uri="{comment.url}" class="blgcmnt__url" rel="external" target="_blank">{comment.url}</f:link.external>
+		</f:if>
+	</div>
+
+	<f:comment><!-- Comment text --></f:comment>
+	<blogComments:language.wrap lang="{comment.lang}">
+		<p class="blgcmnt__text">
+			{comment.text -> f:format.nl2br()}
+		</p>
+	</blogComments:language.wrap>
+</div>
+
+<f:comment><!-- Render children --></f:comment>
+<f:if condition="{comment.children}">
+	<f:for each="{comment.children}" as="comment">
+
+		<f:variable name="currentLevel" value="{f:if(condition:level, then:level, else: 0)}" />
+		<f:variable name="nextLevel" value="{currentLevel + 1}" />
+
+		{f:render(partial: 'Comment/Item.html', arguments: '{comment:comment, level:nextLevel}')}
+	</f:for>
+</f:if>
+</html>
