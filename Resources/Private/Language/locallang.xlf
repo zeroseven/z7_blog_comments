@@ -49,6 +49,11 @@
 				<source>The entry could not be processed, the link has already expired.</source>
 			</trans-unit>
 
+			<!-- Comment item -->
+			<trans-unit id="comment.translate">
+				<source>Translate comment</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
