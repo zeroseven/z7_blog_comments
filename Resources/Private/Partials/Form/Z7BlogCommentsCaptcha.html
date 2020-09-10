@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+
+	<f:form.hidden
+		value=""
+		property="{element.identifier}"
+		id="{element.uniqueIdentifier}"
+		class="{element.properties.elementClassAttribute}"
+		additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+	/>
+
+	<f:comment><!--
+	Ok what is happening here 🧐?
+
+	1. First we "load" an image. A very small one.
+	2. If the image has been loaded, we wait for 2 seconds.
+	3. We "decrypt" the string in the input above by the attribute "data-encryption-key".
+	4. The validator will receive the expected string.
+	5. Everything is fine.
+
+	Is it absolutely safe? No, definitely not!
+	Is it better than nothing? Yes, in any case!
+
+	And finally: Why the image? Because the event will be executed reliably.
+	You can load the content by ajax, no additional javascript or listeners are necessary.
+
+	Have fun!
+	--></f:comment>
+	<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAO2lmDQ==" alt="" style="position: absolute" width="1" height="1" onload="setTimeout(function(){var e=document.getElementById('{element.uniqueIdentifier}');e.value=atob(e.dataset.encryptedKey).split('').reverse().join('')},2000);" />
+
+</formvh:renderRenderable>
+</html>

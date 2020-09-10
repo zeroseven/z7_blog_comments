@@ -73,3 +73,7 @@ renderables:
         validators:
           -
             identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Z7BlogCommentsCaptcha
+        identifier: hidden-1

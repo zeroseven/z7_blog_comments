@@ -18,8 +18,9 @@
   "require": {
     "typo3/cms-core": "^10.4",
     "typo3/cms-form": "^10.4",
+    "zeroseven/z7-blog": ">=0.6",
     "patrickschur/language-detection": "^4.0",
-    "zeroseven/z7-blog": ">=0.6"
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
