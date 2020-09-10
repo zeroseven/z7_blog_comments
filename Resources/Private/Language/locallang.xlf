@@ -11,6 +11,9 @@
 			<trans-unit id="BlogCommentForm.element.email.properties.label">
 				<source>Email</source>
 			</trans-unit>
+			<trans-unit id="BlogCommentForm.element.email.properties.placeholder">
+				<source>Not be visible</source>
+			</trans-unit>
 			<trans-unit id="BlogCommentForm.element.url.properties.label">
 				<source>Url</source>
 			</trans-unit>

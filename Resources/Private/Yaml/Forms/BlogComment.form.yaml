@@ -54,6 +54,7 @@ renderables:
         properties:
           fluidAdditionalAttributes:
               required: required
+              placeholder: 'Handle translations by the locallang.xlf file'
         validators:
           -  identifier: EmailAddress
           -  identifier: NotEmpty
