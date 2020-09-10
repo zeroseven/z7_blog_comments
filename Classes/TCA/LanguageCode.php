@@ -2,9 +2,10 @@
 
 namespace Zeroseven\Z7BlogComments\TCA;
 
+use TYPO3\CMS\Core\Service\IsoCodeService;
 use Zeroseven\Z7BlogComments\Service\LanguageService;
 
-class IsoCodeService extends \TYPO3\CMS\Core\Service\IsoCodeService
+class LanguageCode extends IsoCodeService
 {
 
     protected function spliceItem(string $search, array &$array): ?array
@@ -30,7 +31,7 @@ class IsoCodeService extends \TYPO3\CMS\Core\Service\IsoCodeService
             && ($detectedLanguageCode = LanguageService::detectLanguageCode($text))
             && ($item = $this->spliceItem($detectedLanguageCode, $conf['items']))
         ) {
-            array_unshift($conf['items'], ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang.div.auto', '--div--'], ...$item);
+            array_unshift($conf['items'], ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.language_code.div.auto', '--div--'], ...$item);
         }
 
         return $conf;

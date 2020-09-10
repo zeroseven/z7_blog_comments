@@ -13,13 +13,13 @@
 
 	<f:comment><!-- Comment text --></f:comment>
 	<f:if condition="{comment.text}">
-		<blogComments:language.wrap lang="{comment.lang}">
+		<blogComments:language.wrap languageCode="{comment.languageCode}">
 			<p class="blgcmnt__text">
 				{comment.text -> f:format.nl2br()}
 			</p>
 		</blogComments:language.wrap>
 
-		<blogComments:translate.google lang="{comment.lang}" text="{comment.text}" class="blgcmnt__translate" title="{f:translate(key:'comment.translate', extensionName: 'z7_blog_comments')}">
+		<blogComments:translate.google languageCode="{comment.languageCode}" text="{comment.text}" class="blgcmnt__translate" title="{f:translate(key:'comment.translate', extensionName: 'z7_blog_comments')}">
 			<core:icon identifier="actions-translate" />
 		</blogComments:translate.google>
 	</f:if>

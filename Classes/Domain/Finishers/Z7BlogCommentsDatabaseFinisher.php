@@ -38,7 +38,7 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
         }
 
         // Detect language of comment
-        $comment->setLang(LanguageService::detectLanguageCode($comment->getText()));
+        $comment->setLanguageCode(LanguageService::detectLanguageCode($comment->getText()));
 
         // Write to database
         $this->objectManager->get(CommentRepository::class)->add($comment);

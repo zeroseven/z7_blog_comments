@@ -21,7 +21,7 @@ return [
     'palettes' => [
         'content' => [
             'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.content',
-            'showitem' => 'text, lang'
+            'showitem' => 'text, language_code'
         ],
         'author' => [
             'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.palette.author',
@@ -53,20 +53,20 @@ return [
                 ]]
             ]
         ],
-        'lang' => [
+        'language_code' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang',
-            'description' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang.description',
+            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.language_code',
+            'description' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.language_code.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'minitems' => 1,
                 'maxitems' => 1,
-                'itemsProcFunc' => 'Zeroseven\Z7BlogComments\TCA\IsoCodeService->renderIsoCodeSelectDropdown',
+                'itemsProcFunc' => 'Zeroseven\Z7BlogComments\TCA\LanguageCode->renderIsoCodeSelectDropdown',
                 'items' => [
-                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang.div.none', '--div--'],
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.language_code.div.none', '--div--'],
                     ['-', ''],
-                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.lang.div.select', '--div--']
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.language_code.div.select', '--div--']
                 ]
             ]
         ],

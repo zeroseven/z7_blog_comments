@@ -52,22 +52,22 @@
 			<trans-unit id="tx_z7blog_domain_model_comment.hidden.1">
 				<source>Disabled</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.lang">
+			<trans-unit id="tx_z7blog_domain_model_comment.language_code">
 				<source>Language</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.lang.description">
+			<trans-unit id="tx_z7blog_domain_model_comment.language_code.description">
 				<source>Tip: Choose comment language for improved accessibility and seo.</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.recommend">
+			<trans-unit id="tx_z7blog_domain_model_comment.language_code.div.recommend">
 				<source>Recommended language</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.auto">
+			<trans-unit id="tx_z7blog_domain_model_comment.language_code.div.auto">
 				<source>Recommended language</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.none">
+			<trans-unit id="tx_z7blog_domain_model_comment.language_code.div.none">
 				<source>No language selection</source>
 			</trans-unit>
-			<trans-unit id="tx_z7blog_domain_model_comment.lang.div.select">
+			<trans-unit id="tx_z7blog_domain_model_comment.language_code.div.select">
 				<source>Available languages</source>
 			</trans-unit>
 			<trans-unit id="tx_z7blog_domain_model_comment.crdate">

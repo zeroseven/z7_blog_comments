@@ -15,7 +15,7 @@ class WrapViewHelper extends AbstractViewHelper
 
     public function initializeArguments(): void
     {
-        $this->registerArgument('lang', 'string', 'The language attribute text content');
+        $this->registerArgument('languageCode', 'string', 'The language attribute text content');
         $this->registerArgument('tag', 'string', 'Define tag name', false, 'div');
     }
 
@@ -23,12 +23,12 @@ class WrapViewHelper extends AbstractViewHelper
     {
 
         // Do nothing
-        if(empty($arguments['lang']) || $arguments['lang'] === LanguageService::getLanguageCode()) {
+        if(empty($arguments['languageCode']) || $arguments['languageCode'] === LanguageService::getLanguageCode()) {
             return $renderChildrenClosure();
         }
 
         // Wrap text with lang attribute
-        return '<' . $arguments['tag'] . ' lang="' .  $arguments['lang'] . '">' .  trim($renderChildrenClosure()) . '</' . $arguments['tag'] . '>';
+        return '<' . $arguments['tag'] . ' lang="' .  $arguments['languageCode'] . '">' .  trim($renderChildrenClosure()) . '</' . $arguments['tag'] . '>';
     }
 
 }

@@ -20,10 +20,18 @@ abstract class AbstractTranslateViewHelper extends AbstractTagBasedViewHelper
 
         parent::initializeArguments();
 
-        $this->registerUniversalTagAttributes();
+        $this->registerTagAttribute('class', 'string', 'CSS class(es) for this element');
+        $this->registerTagAttribute('dir', 'string', 'Text direction for this HTML element. Allowed strings: "ltr" (left to right), "rtl" (right to left)');
+        $this->registerTagAttribute('id', 'string', 'Unique (in this file) identifier for this HTML element.');
+        $this->registerTagAttribute('style', 'string', 'Individual CSS styles for this element');
+        $this->registerTagAttribute('title', 'string', 'Tooltip text of element');
+        $this->registerTagAttribute('accesskey', 'string', 'Keyboard shortcut to access this element');
+        $this->registerTagAttribute('tabindex', 'integer', 'Specifies the tab order of this element');
+        $this->registerTagAttribute('onclick', 'string', 'JavaScript evaluated for the onclick event');
         $this->registerTagAttribute('target', 'string', 'Specifies where to open the linked document', false, '_blank');
         $this->registerTagAttribute('rel', 'string', 'Specified the relationship between the current document and the linked document.', false, 'external');
 
+        $this->registerArgument('languageCode', 'string', 'The two letter language code');
         $this->registerArgument('string', 'string', 'Link text');
         $this->registerArgument('text', 'string', 'The text you want to translate', true);
     }
@@ -34,7 +42,7 @@ abstract class AbstractTranslateViewHelper extends AbstractTagBasedViewHelper
     {
 
         // Do nothing
-        if (empty($this->arguments['lang']) || $this->arguments['lang'] === LanguageService::getLanguageCode()) {
+        if (empty($this->arguments['languageCode']) || $this->arguments['languageCode'] === LanguageService::getLanguageCode()) {
             return '';
         }
 

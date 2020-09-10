@@ -23,7 +23,7 @@ class Comment extends AbstractEntity
     protected $sysLanguageUid;
 
     /** @var string */
-    protected $lang;
+    protected $languageCode;
 
     /** @var string */
     protected $name;
@@ -96,14 +96,14 @@ class Comment extends AbstractEntity
         return $this;
     }
 
-    public function getLang(): string
+    public function getLanguageCode(): string
     {
-        return $this->lang;
+        return $this->languageCode;
     }
 
-    public function setLang(string $lang): self
+    public function setLanguageCode(string $code): self
     {
-        $this->lang = $lang;
+        $this->languageCode = $code;
         return $this;
     }
 
