@@ -15,8 +15,8 @@ trait Post
      */
     protected $comments;
 
-    /** @var bool */
-    protected $commentsEnabled;
+    /** @var int */
+    protected $commentMode;
 
     public function getComments(): ObjectStorage
     {
@@ -29,14 +29,14 @@ trait Post
         return $this;
     }
 
-    public function isCommentsEnabled(): bool
+    public function getCommentMode(): int
     {
-        return $this->commentsEnabled;
+        return (int)$this->commentMode;
     }
 
-    public function setCommentsEnabled(bool $mode): self
+    public function setCommentMode(int $mode): self
     {
-        $this->commentsEnabled = $mode;
+        $this->commentMode = $mode;
         return $this;
     }
 

@@ -7,6 +7,24 @@ call_user_func(static function(string $table, int $dokType) {
 
     // Define new fields
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, [
+        'post_comment_mode' => [
+            'exclude' => true,
+            'l10n_mode' => 'exclude',
+            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comment_mode',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'minitems' => 1,
+                'maxitems' => 1,
+                'default' => 0,
+                'items' => [
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comment_mode.2', 2],
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comment_mode.div.enable', '--div--'],
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comment_mode.0', 0],
+                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comment_mode.1', 1]
+                ]
+            ]
+        ],
         'post_comments' => [
             'displayCond' => 'FIELD:l10n_parent:=:0',
             'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comments',
@@ -27,31 +45,13 @@ call_user_func(static function(string $table, int $dokType) {
                     'showPossibleLocalizationRecords' => false,
                     'useSortable' => false,
                     'showAllLocalizationLink' => false,
-                    'newRecordLinkTitle' => 'LLL:EXT:z7_blog/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment.children.add',
-                ]
-            ]
-        ],
-        'post_comments_mode' => [
-            'exclude' => true,
-            'l10n_mode' => 'exclude',
-            'label' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comments_mode',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'minitems' => 1,
-                'maxitems' => 1,
-                'default' => 0,
-                'items' => [
-                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comments_mode.2', 2],
-                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comments_mode.div.enable', '--div--'],
-                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comments_mode.0', 0],
-                    ['LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comments_mode.1', 1]
+                    'newRecordLinkTitle' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.post_comments.add',
                 ]
             ]
         ]
     ]);
 
     // Add new fields to TCA of blog posts
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,'--div--;Comments, post_comments, post_comments_mode', (string)$dokType);
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,'--div--;LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.tab.comments, post_comment_mode, post_comments', (string)$dokType);
 
 },'pages', \Zeroseven\Z7Blog\Domain\Model\Post::DOKTYPE);

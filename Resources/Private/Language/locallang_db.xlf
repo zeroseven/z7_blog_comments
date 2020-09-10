@@ -3,25 +3,34 @@
 	<file source-language="en" datatype="plaintext" original="messages" >
 		<header/>
 		<body>
+
+			<!-- Page properties -->
+			<trans-unit id="pages.tab.comments">
+				<source>Comments</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comment_mode">
+				<source>Comment mode</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comment_mode.div.enable">
+				<source>Enable</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comment_mode.0">
+				<source>Read and write</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comment_mode.1">
+				<source>Read (only)</source>
+			</trans-unit>
+			<trans-unit id="pages.post_comment_mode.2">
+				<source>Disabled</source>
+			</trans-unit>
 			<trans-unit id="pages.post_comments">
 				<source>Comments</source>
 			</trans-unit>
-			<trans-unit id="pages.post_comments_mode">
-				<source>Comment mode</source>
-			</trans-unit>
-			<trans-unit id="pages.post_comments_mode.div.enable">
-				<source>Enable</source>
-			</trans-unit>
-			<trans-unit id="pages.post_comments_mode.0">
-				<source>Read and write</source>
-			</trans-unit>
-			<trans-unit id="pages.post_comments_mode.1">
-				<source>Read (only)</source>
-			</trans-unit>
-			<trans-unit id="pages.post_comments_mode.2">
-				<source>Disabled</source>
+			<trans-unit id="pages.post_comments.add">
+				<source>Add comment</source>
 			</trans-unit>
 
+			<!-- Comment -->
 			<trans-unit id="tx_z7blog_domain_model_comment">
 				<source>Comment</source>
 			</trans-unit>
@@ -78,6 +87,9 @@
 			</trans-unit>
 			<trans-unit id="tx_z7blog_domain_model_comment.children">
 				<source>Reply</source>
+			</trans-unit>
+			<trans-unit id="tx_z7blog_domain_model_comment.children.add">
+				<source>Add</source>
 			</trans-unit>
 			<trans-unit id="tx_z7blog_domain_model_comment.remote_address">
 				<source>IP</source>

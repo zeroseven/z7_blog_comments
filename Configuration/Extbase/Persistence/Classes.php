@@ -6,8 +6,8 @@ return [
             'comments' => [
                 'fieldName' => 'post_comments'
             ],
-            'commentsEnabled' => [
-                'fieldName' => 'post_comments_enabled'
+            'commentMode' => [
+                'fieldName' => 'post_comment_mode'
             ]
         ]
     ],

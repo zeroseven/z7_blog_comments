@@ -1,6 +1,6 @@
 CREATE TABLE pages (
     post_comments int(11) unsigned DEFAULT '0' NOT NULL,
-    post_comments_mode int(1) unsigned DEFAULT '0' NOT NULL,
+    post_comment_mode int(1) unsigned DEFAULT '0' NOT NULL,
 );
 
 CREATE TABLE tx_z7blog_domain_model_comment (
