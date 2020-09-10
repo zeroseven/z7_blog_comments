@@ -37,7 +37,7 @@
 
 			<!-- Control state -->
 			<trans-unit id="control.enabled">
-				<source>Comment is visible now.</source>
+				<source>The comment has been activated.</source>
 			</trans-unit>
 			<trans-unit id="control.rejected">
 				<source>The comment has been rejected.</source>
@@ -46,7 +46,7 @@
 				<source>The comment has been deleted.</source>
 			</trans-unit>
 			<trans-unit id="control.expired">
-				<source>The entry could not be processed, the link has already expired.</source>
+				<source>The comment could not be edited, the link has already expired.</source>
 			</trans-unit>
 
 			<!-- Comment item -->
