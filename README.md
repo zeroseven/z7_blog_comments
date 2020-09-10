@@ -24,7 +24,6 @@ Ist die form-Erweiterung im Projekt schon im Einsatz, könnte ein bereits fertig
 
 ## Todo's
 
-* Einfacher Spam-Schutz (über `TypoScriptFrontendController->TypoScriptFrontendController` möglich)
 * Widget
 * Comment reply function in frontend
-* Frontend ausgabe
+* Implement to post structured data by PSR-14 event
