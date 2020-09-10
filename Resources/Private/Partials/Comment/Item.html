@@ -1,6 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/core/ViewHelpers" data-namespace-typo3-fluid="true">
 <div class="blgcmnt{f:if(condition:level, then:'--reply-{level}')}" id="comment-{comment.uid}">
-
 	<f:comment><!-- Render author data --></f:comment>
 	<div class="blgcmnt__data">
 		<f:if condition="{comment.name}">
@@ -12,17 +11,17 @@
 	</div>
 
 	<f:comment><!-- Comment text --></f:comment>
-	<f:if condition="{comment.text}">
-		<blogComments:language.wrap languageCode="{comment.languageCode}">
-			<p class="blgcmnt__text">
+	<div class="blgcmnt__content">
+		<f:if condition="{comment.text}">
+			<blogComments:language.wrap class="blgcmnt__text" languageCode="{comment.languageCode}" tagName="p">
 				{comment.text -> f:format.nl2br()}
-			</p>
-		</blogComments:language.wrap>
+			</blogComments:language.wrap>
 
-		<blogComments:translate.google languageCode="{comment.languageCode}" text="{comment.text}" class="blgcmnt__translate" title="{f:translate(key:'comment.translate', extensionName: 'z7_blog_comments')}">
-			<core:icon identifier="actions-translate" />
-		</blogComments:translate.google>
-	</f:if>
+			<blogComments:translate.google languageCode="{comment.languageCode}" text="{comment.text}" class="blgcmnt__translate" title="{f:translate(key:'comment.translate', extensionName: 'z7_blog_comments')}">
+				<core:icon identifier="actions-translate" />
+			</blogComments:translate.google>
+		</f:if>
+	</div>
 </div>
 
 <f:comment><!-- Render children --></f:comment>
