@@ -3,6 +3,7 @@ TYPO3:
     Form:
       prototypes:
         standard:
+
           formElementsDefinition:
             Form:
               renderingOptions:
@@ -17,12 +18,18 @@ TYPO3:
               __inheritances:
                 10: 'TYPO3.CMS.Form.prototypes.standard.formElementsDefinition.Hidden'
               implementationClassName: 'Zeroseven\Z7BlogComments\Domain\FormElements\Z7BlogCommentsCaptcha'
+              validators:
+                - identifier: Z7BlogCommentsCaptcha
 
           finishersDefinition:
             Z7BlogCommentsVariableProvider:
               implementationClassName: 'Zeroseven\Z7BlogComments\Domain\Finishers\Z7BlogCommentsVariableProvider'
             Z7BlogCommentsDatabaseFinisher:
               implementationClassName: 'Zeroseven\Z7BlogComments\Domain\Finishers\Z7BlogCommentsDatabaseFinisher'
+
+          validatorsDefinition:
+            Z7BlogCommentsCaptcha:
+              implementationClassName: 'Zeroseven\Z7BlogComments\Domain\Validation\Z7BlogCommentsCaptchaValidator'
 
       persistenceManager:
         allowedExtensionPaths:

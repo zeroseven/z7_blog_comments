@@ -54,6 +54,11 @@
 				<source>Translate comment</source>
 			</trans-unit>
 
+			<!-- Form validation -->
+			<trans-unit id="validation.error.Z7BlogCommentsCaptchaValidator">
+				<source>An error has occurred. Please try again. Otherwise activate JavaScript or use a more modern browser.</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
