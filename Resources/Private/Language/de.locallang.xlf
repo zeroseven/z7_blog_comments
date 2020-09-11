@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" target-language="de">
+    <header/>
+    <body>
+      <!-- BlogCommentForm.form.yaml -->
+      <trans-unit id="BlogCommentForm.element.name.properties.label">
+        <source>Name</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="BlogCommentForm.element.email.properties.label">
+        <source>Email</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="BlogCommentForm.element.email.properties.placeholder">
+        <source>Not be visible</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="BlogCommentForm.element.url.properties.label">
+        <source>Url</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="BlogCommentForm.element.text.properties.label">
+        <source>Your comment</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="BlogCommentForm.finisher.Confirmation.message">
+        <source>Thanks for your comment. Please note that activation can take several hours.</source>
+        <target></target>
+      </trans-unit>
+      <!-- EmailToReceiver -->
+      <trans-unit id="EmailToReceiver.control.description">
+        <source>What do you want to do now?</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="EmailToReceiver.control.enable">
+        <source>Activate</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="EmailToReceiver.control.reject">
+        <source>Reject</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="EmailToReceiver.control.delete">
+        <source>Delete</source>
+        <target></target>
+      </trans-unit>
+      <!-- Control state -->
+      <trans-unit id="control.enabled">
+        <source>The comment has been activated.</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="control.rejected">
+        <source>The comment has been rejected.</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="control.deleted">
+        <source>The comment has been deleted.</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="control.expired">
+        <source>The comment could not be edited, the link has already expired.</source>
+        <target></target>
+      </trans-unit>
+      <!-- Comment item -->
+      <trans-unit id="comment.translate">
+        <source>Translate comment</source>
+        <target></target>
+      </trans-unit>
+      <!-- Form validation -->
+      <trans-unit id="validation.error.Z7BlogCommentsCaptchaValidator">
+        <source>An error has occurred. Please try again. Otherwise activate JavaScript or use a more modern browser.</source>
+        <target></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
