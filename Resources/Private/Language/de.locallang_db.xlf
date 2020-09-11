@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" target-language="de">
+    <header/>
+    <body>
+      <!-- Page properties -->
+      <trans-unit id="pages.tab.comments">
+        <source>Comments</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="pages.post_comment_mode">
+        <source>Comment mode</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="pages.post_comment_mode.div.enable">
+        <source>Enable</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="pages.post_comment_mode.0">
+        <source>Read and write</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="pages.post_comment_mode.1">
+        <source>Read (only)</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="pages.post_comment_mode.2">
+        <source>Disabled</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="pages.post_comments">
+        <source>Comments</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="pages.post_comments.add">
+        <source>Add comment</source>
+        <target></target>
+      </trans-unit>
+      <!-- Comment -->
+      <trans-unit id="tx_z7blog_domain_model_comment">
+        <source>Comment</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.palette.content">
+        <source>Content</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.palette.author">
+        <source>Author</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.palette.log">
+        <source>Log</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.hidden">
+        <source>Visibility</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.hidden.0">
+        <source>Active</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.hidden.1">
+        <source>Disabled</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.language_code">
+        <source>Language</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.language_code.description">
+        <source>Tip: Choose comment language for improved accessibility and seo.</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.recommend">
+        <source>Recommended language</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.auto">
+        <source>Recommended language</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.none">
+        <source>No language selection</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.select">
+        <source>Available languages</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.crdate">
+        <source>Create date</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.name">
+        <source>Name</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.email">
+        <source>Email</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.url">
+        <source>Url</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.text">
+        <source>Comment</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.children">
+        <source>Reply</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.children.add">
+        <source>Add</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.remote_address">
+        <source>IP</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="tx_z7blog_domain_model_comment.user_agent">
+        <source>Browser</source>
+        <target></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
