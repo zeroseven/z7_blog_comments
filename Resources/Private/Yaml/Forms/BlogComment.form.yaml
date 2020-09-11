@@ -37,7 +37,7 @@ renderables:
     identifier: page-1
     renderables:
       -
-        defaultValue: ''
+        defaultValue: 0
         type: Hidden
         identifier: parent
       -
