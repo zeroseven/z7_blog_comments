@@ -6,71 +6,71 @@
       <!-- BlogCommentForm.form.yaml -->
       <trans-unit id="BlogCommentForm.element.name.properties.label">
         <source>Name</source>
-        <target></target>
+        <target>Name</target>
       </trans-unit>
       <trans-unit id="BlogCommentForm.element.email.properties.label">
         <source>Email</source>
-        <target></target>
+        <target>E-Mail</target>
       </trans-unit>
       <trans-unit id="BlogCommentForm.element.email.properties.placeholder">
         <source>Not be visible</source>
-        <target></target>
+        <target state="translated">Nicht sichtbar sein</target>
       </trans-unit>
       <trans-unit id="BlogCommentForm.element.url.properties.label">
         <source>Url</source>
-        <target></target>
+        <target>URL</target>
       </trans-unit>
       <trans-unit id="BlogCommentForm.element.text.properties.label">
         <source>Your comment</source>
-        <target></target>
+        <target>Ihr Kommentar</target>
       </trans-unit>
       <trans-unit id="BlogCommentForm.finisher.Confirmation.message">
         <source>Thanks for your comment. Please note that activation can take several hours.</source>
-        <target></target>
+        <target>Danke für Ihr Kommentar. Bitte beachten Sie dass die Aktivierung mehrere Stunden dauern kann.</target>
       </trans-unit>
       <!-- EmailToReceiver -->
       <trans-unit id="EmailToReceiver.control.description">
         <source>What do you want to do now?</source>
-        <target></target>
+        <target>Was möchten Sie jetzt tun?</target>
       </trans-unit>
       <trans-unit id="EmailToReceiver.control.enable">
         <source>Activate</source>
-        <target></target>
+        <target>Aktivieren</target>
       </trans-unit>
       <trans-unit id="EmailToReceiver.control.reject">
         <source>Reject</source>
-        <target></target>
+        <target>Ablehnen</target>
       </trans-unit>
       <trans-unit id="EmailToReceiver.control.delete">
         <source>Delete</source>
-        <target></target>
+        <target>Löschen</target>
       </trans-unit>
       <!-- Control state -->
       <trans-unit id="control.enabled">
         <source>The comment has been activated.</source>
-        <target></target>
+        <target>Der Kommentar wurde aktiviert.</target>
       </trans-unit>
       <trans-unit id="control.rejected">
         <source>The comment has been rejected.</source>
-        <target></target>
+        <target>Der Kommentar wurde abgelehnt.</target>
       </trans-unit>
       <trans-unit id="control.deleted">
         <source>The comment has been deleted.</source>
-        <target></target>
+        <target>Der Kommentar wurde gelöscht.</target>
       </trans-unit>
       <trans-unit id="control.expired">
         <source>The comment could not be edited, the link has already expired.</source>
-        <target></target>
+        <target>Der Kommentar konnte nicht bearbeitet werden, der Link ist bereits abgelaufen.</target>
       </trans-unit>
       <!-- Comment item -->
       <trans-unit id="comment.translate">
         <source>Translate comment</source>
-        <target></target>
+        <target>Kommentar übersetzen</target>
       </trans-unit>
       <!-- Form validation -->
       <trans-unit id="validation.error.Z7BlogCommentsCaptchaValidator">
         <source>An error has occurred. Please try again. Otherwise activate JavaScript or use a more modern browser.</source>
-        <target></target>
+        <target>Ein Fehler ist aufgetreten. Bitte erneut versuchen. Andernfalls aktivieren Sie JavaScript oder verwenden einen moderneren Browser.</target>
       </trans-unit>
     </body>
   </file>
