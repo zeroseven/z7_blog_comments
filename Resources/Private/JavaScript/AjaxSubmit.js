@@ -1,4 +1,4 @@
-Zeroseven.Blog.Utility.register('ajaxForm', (f, e) => {
+Zeroseven.Blog.Utility.register('ajaxSubmit', (f, e) => {
 
   // Define variables
   const event = e || window.event;

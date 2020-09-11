@@ -4,7 +4,8 @@
 plugin.tx_z7blog.settings {
   comments {
     includeCSS.notification = {$plugin.tx_z7blog.settings.comments.includeCSS.notification}
-    includeJS.notification = {$plugin.tx_z7blog.settings.comments.includeJS.ajax_form}
+    includeJS.z7_blog_ajaxsubmit = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_ajaxsubmit}
+    includeJS.z7_blog_reply = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_reply}
   }
 }
 
@@ -16,7 +17,8 @@ plugin.tx_z7blog.view.partialRootPaths.1599679732 = EXT:z7_blog_comments/Resourc
 ################################################
 # Include JavaScript
 ################################################
-page.includeJSFooter.ajax_form = {$plugin.tx_z7blog.settings.comments.includeJS.ajax_form}
+page.includeJSFooter.z7_blog_ajaxsubmit = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_ajaxsubmit}
+page.includeJSFooter.z7_blog_reply = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_reply}
 
 ################################################
 # Register configuration

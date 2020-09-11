@@ -20,6 +20,8 @@
 			<blogComments:translate.google languageCode="{comment.languageCode}" text="{comment.text}" class="blgcmnt__translate" title="{f:translate(key:'comment.translate', extensionName: 'z7_blog_comments')}">
 				<core:icon identifier="actions-translate" />
 			</blogComments:translate.google>
+
+			<a href="#" onclick="Zeroseven.Blog.reply('#blogCommentForm--parent', '{comment.uid}', true)" title="Reply to {comment.name}">Reply</a>
 		</f:if>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 renderingOptions:
   submitButtonLabel: Submit
   fluidAdditionalAttributes:
-    onsubmit: "Zeroseven.Blog.ajaxForm(this);"
+    onsubmit: "Zeroseven.Blog.ajaxSubmit(this);"
 
 type: Form
 label: BlogComment
@@ -36,6 +36,10 @@ renderables:
     type: Page
     identifier: page-1
     renderables:
+      -
+        defaultValue: ''
+        type: Hidden
+        identifier: parent
       -
         defaultValue: ''
         type: Text
