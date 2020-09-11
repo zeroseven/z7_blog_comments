@@ -6,124 +6,124 @@
       <!-- Page properties -->
       <trans-unit id="pages.tab.comments">
         <source>Comments</source>
-        <target></target>
+        <target>Kommentare</target>
       </trans-unit>
       <trans-unit id="pages.post_comment_mode">
         <source>Comment mode</source>
-        <target></target>
+        <target>Kommentarmodus</target>
       </trans-unit>
       <trans-unit id="pages.post_comment_mode.div.enable">
         <source>Enable</source>
-        <target></target>
+        <target>Aktivieren</target>
       </trans-unit>
       <trans-unit id="pages.post_comment_mode.0">
         <source>Read and write</source>
-        <target></target>
+        <target>Lesen und schreiben</target>
       </trans-unit>
       <trans-unit id="pages.post_comment_mode.1">
         <source>Read (only)</source>
-        <target></target>
+        <target>Lesen (nur)</target>
       </trans-unit>
       <trans-unit id="pages.post_comment_mode.2">
         <source>Disabled</source>
-        <target></target>
+        <target>Deaktiviert</target>
       </trans-unit>
       <trans-unit id="pages.post_comments">
         <source>Comments</source>
-        <target></target>
+        <target>Kommentare</target>
       </trans-unit>
       <trans-unit id="pages.post_comments.add">
         <source>Add comment</source>
-        <target></target>
+        <target>Kommentar hinzufügen</target>
       </trans-unit>
       <!-- Comment -->
       <trans-unit id="tx_z7blog_domain_model_comment">
         <source>Comment</source>
-        <target></target>
+        <target>Kommentar</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.palette.content">
         <source>Content</source>
-        <target></target>
+        <target>Inhalt</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.palette.author">
         <source>Author</source>
-        <target></target>
+        <target>Autor</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.palette.log">
         <source>Log</source>
-        <target></target>
+        <target>Log</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.hidden">
         <source>Visibility</source>
-        <target></target>
+        <target>Sichtbarkeit</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.hidden.0">
         <source>Active</source>
-        <target></target>
+        <target>Aktiv</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.hidden.1">
         <source>Disabled</source>
-        <target></target>
+        <target>Inaktiv</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.language_code">
         <source>Language</source>
-        <target></target>
+        <target>Sprache</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.language_code.description">
         <source>Tip: Choose comment language for improved accessibility and seo.</source>
-        <target></target>
+        <target>Hinweis: Wählen Sie eine Kommentarsprache für verbesserte Sichtbarkeit und SEO.</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.recommend">
         <source>Recommended language</source>
-        <target></target>
+        <target>Vorgeschlagene Sprache</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.auto">
         <source>Recommended language</source>
-        <target></target>
+        <target>Vorgeschlagene Sprache</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.none">
         <source>No language selection</source>
-        <target></target>
+        <target>Keine Sprachauswahl</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.language_code.div.select">
         <source>Available languages</source>
-        <target></target>
+        <target>Verfügbare Sprachen</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.crdate">
         <source>Create date</source>
-        <target></target>
+        <target>Erstelldatum</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.name">
         <source>Name</source>
-        <target></target>
+        <target>Name</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.email">
         <source>Email</source>
-        <target></target>
+        <target>E-Mail</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.url">
         <source>Url</source>
-        <target></target>
+        <target>URL</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.text">
         <source>Comment</source>
-        <target></target>
+        <target>Kommentar</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.children">
         <source>Reply</source>
-        <target></target>
+        <target>Antwort</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.children.add">
         <source>Add</source>
-        <target></target>
+        <target>Hinzufügen</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.remote_address">
         <source>IP</source>
-        <target></target>
+        <target>IP</target>
       </trans-unit>
       <trans-unit id="tx_z7blog_domain_model_comment.user_agent">
         <source>Browser</source>
-        <target></target>
+        <target>Browser</target>
       </trans-unit>
     </body>
   </file>
