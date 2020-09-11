@@ -10,6 +10,15 @@
       this.titleWrap = null;
     }
 
+    destroy() {
+      this.unset(true);
+      this.field = null;
+      this.form = null;
+      this.formWrap = null;
+      this.formWrapNextSibling = null;
+      this.titleWrap = null;
+    }
+
     unset(resetFormOriginalPosition) {
 
       // Clear value in field
@@ -72,25 +81,13 @@
     }
   }
 
-  let temporaryInstaces = {};
-
-  const getInstance = (field, form) => {
-
-    // Get hash of current view (in case, that you change page content by ajax request …)
-    const key = btoa(location.href);
-
-    if(temporaryInstaces[key]) {
-      return temporaryInstaces[key];
-    }
-
-    return temporaryInstaces[key] = new ReplyHandler(field, form);
-  };
+  let instance = null;
 
   const reply = (fieldSelector, value, appendFormToComment, target, e) => {
 
     // Initialize ReplyHandler
     const event = e || window.event;
-    const replyHandler = getInstance(document.querySelector(fieldSelector))
+    const replyHandler = instance || (instance = new ReplyHandler(document.querySelector(fieldSelector)));
 
     // Prevent event
     if (typeof event !== 'undefined') {
@@ -102,6 +99,15 @@
 
   };
 
+  const resetReply = () => {
+    if(instance) {
+      instance.destroy();
+    }
+
+    instance = null;
+  };
+
   // Make reply function accessible
   Zeroseven.Blog.Utility.register('reply', reply);
+  Zeroseven.Blog.Utility.register('resetReply', resetReply);
 })();
