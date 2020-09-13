@@ -12,7 +12,6 @@ use Zeroseven\Z7Blog\Service\SettingsService;
  */
 class Z7BlogCommentsVariableProvider extends AbstractFinisher
 {
-
     public const IDENTIFIER = 'Z7BlogComments';
 
     /** @var array */

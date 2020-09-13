@@ -9,7 +9,6 @@ use Zeroseven\Z7BlogComments\Domain\Demand\CommentDemand;
 
 class CommentRepository extends AbstractRepository
 {
-
     public function initializeObject()
     {
         $querySettings = $this->objectManager->get(Typo3QuerySettings::class);
@@ -26,7 +25,7 @@ class CommentRepository extends AbstractRepository
     {
 
         // Respect restrictions on query
-        if($respectRestrictions) {
+        if ($respectRestrictions) {
             return parent::findOneByPermissionKey($key);
         }
 
@@ -45,5 +44,4 @@ class CommentRepository extends AbstractRepository
         // Get posts and store and return the first one …
         return ($posts = $query->execute()) ? $posts->getFirst() : null;
     }
-
 }

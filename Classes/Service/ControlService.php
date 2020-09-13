@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Service;
 
@@ -11,7 +13,6 @@ use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
 class ControlService
 {
-
     public const PARAMETER = 'tx_z7blogcomments';
 
     public const STATE_ENABLED = 1;
@@ -95,14 +96,12 @@ class ControlService
 
     public static function control(): int
     {
-
         if (
             ($parameter = GeneralUtility::_GET(self::PARAMETER))
             && ($action = $parameter['action'])
             && ($permissionKey = $parameter['permission_key'])
             && ($comment = self::initializeClass(CommentRepository::class)->findByPermissionKey($permissionKey))
         ) {
-
             if (!$comment->isPending()) {
                 return self::STATE_EXPIRED;
             }
@@ -125,5 +124,4 @@ class ControlService
 
         return 0;
     }
-
 }

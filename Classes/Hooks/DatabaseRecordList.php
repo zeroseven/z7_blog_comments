@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Hooks;
 
@@ -6,7 +8,6 @@ use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 
 class DatabaseRecordList
 {
-
     public function modifyQuery(array $parameters, string $table, int $pageId, array $additionalConstraints, array $fieldList, QueryBuilder $queryBuilder): void
     {
 

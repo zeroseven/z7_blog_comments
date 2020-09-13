@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Domain\Model;
 
 use DateTime;
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Annotation\ORM as Extbase;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use Zeroseven\Z7Blog\Domain\Model\Post;
 
 class Comment extends AbstractEntity
@@ -226,7 +228,4 @@ class Comment extends AbstractEntity
         $this->parent = $parent;
         return $this;
     }
-
-
-
 }

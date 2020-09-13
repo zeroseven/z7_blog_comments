@@ -1,4 +1,5 @@
 <?php
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:tx_z7blog_domain_model_comment',
@@ -194,6 +195,3 @@ return [
         ]
     ]
 ];
-
-
-

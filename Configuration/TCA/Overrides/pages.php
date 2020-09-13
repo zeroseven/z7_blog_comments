@@ -3,7 +3,7 @@
 defined('TYPO3_MODE') || die();
 
 // Manipulate TCA
-call_user_func(static function(string $table, int $dokType) {
+call_user_func(static function (string $table, int $dokType) {
 
     // Define new fields
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns($table, [

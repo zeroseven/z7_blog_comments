@@ -7,11 +7,10 @@ use Zeroseven\Z7BlogComments\Service\LanguageService;
 
 class LanguageCode extends IsoCodeService
 {
-
     protected function spliceItem(string $search, array &$array): ?array
     {
         foreach ($array as $key => $item) {
-            if(is_array($item) && array_search($search, $item, true)) {
+            if (is_array($item) && array_search($search, $item, true)) {
                 return array_splice($array, $key, 1);
             }
         }
@@ -26,7 +25,7 @@ class LanguageCode extends IsoCodeService
         $conf = parent::renderIsoCodeSelectDropdown($conf);
 
         // Recommend language and manipulate items
-        if(
+        if (
             ($text = $conf['row']['text'] ?? null)
             && ($detectedLanguageCode = LanguageService::detectLanguageCode($text))
             && ($item = $this->spliceItem($detectedLanguageCode, $conf['items']))
@@ -36,5 +35,4 @@ class LanguageCode extends IsoCodeService
 
         return $conf;
     }
-
 }

@@ -1,11 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Middleware;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -18,7 +20,6 @@ use Zeroseven\Z7BlogComments\Service\ControlService;
 
 class CommentControl implements MiddlewareInterface
 {
-
     protected function setNotification(string $translationKey, string $state): void
     {
 
@@ -51,7 +52,6 @@ class CommentControl implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-
         if ($GLOBALS['TSFE'] instanceof TypoScriptFrontendController && $state = ControlService::control()) {
 
             // Show notification
@@ -72,5 +72,4 @@ class CommentControl implements MiddlewareInterface
 
         return $handler->handle($request);
     }
-
 }

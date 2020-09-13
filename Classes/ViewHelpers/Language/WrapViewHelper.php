@@ -1,14 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\ViewHelpers\Language;
 
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use Zeroseven\Z7BlogComments\Service\LanguageService;
 
 class WrapViewHelper extends AbstractTagBasedViewHelper
 {
-
     public function initializeArguments(): void
     {
         $this->registerTagAttribute('class', 'string', 'CSS class(es) for this element');
@@ -31,7 +31,7 @@ class WrapViewHelper extends AbstractTagBasedViewHelper
         $content = trim($this->arguments['string'] ?: $this->renderChildren());
 
         // Do nothing
-        if(($this->arguments['languageCode'] === LanguageService::getLanguageCode() || empty($this->arguments['languageCode'])) && empty($this->arguments['tagName']) && empty($this->arguments['class']) && empty($this->arguments['dir']) && empty($this->arguments['id']) && empty($this->arguments['style']) && empty($this->arguments['title']) && empty($this->arguments['accesskey']) && empty($this->arguments['tabindex'])) {
+        if (($this->arguments['languageCode'] === LanguageService::getLanguageCode() || empty($this->arguments['languageCode'])) && empty($this->arguments['tagName']) && empty($this->arguments['class']) && empty($this->arguments['dir']) && empty($this->arguments['id']) && empty($this->arguments['style']) && empty($this->arguments['title']) && empty($this->arguments['accesskey']) && empty($this->arguments['tabindex'])) {
             return $content . '<h1>JO!!!</h1>';
         }
 
@@ -39,7 +39,7 @@ class WrapViewHelper extends AbstractTagBasedViewHelper
         $this->tag->setTagName($this->arguments['tagName'] ?: 'div');
 
         // Add language attribute
-        if(!($this->arguments['languageCode'] === LanguageService::getLanguageCode() || empty($this->arguments['languageCode']))) {
+        if (!($this->arguments['languageCode'] === LanguageService::getLanguageCode() || empty($this->arguments['languageCode']))) {
             $this->tag->addAttribute('lang', $this->arguments['languageCode']);
         }
 
@@ -49,5 +49,4 @@ class WrapViewHelper extends AbstractTagBasedViewHelper
         // Return the tag
         return $this->tag->render();
     }
-
 }

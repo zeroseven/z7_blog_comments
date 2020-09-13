@@ -3,7 +3,6 @@
 namespace Zeroseven\Z7BlogComments\Domain\Finishers;
 
 use DateTime;
-use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
@@ -15,7 +14,6 @@ use Zeroseven\Z7BlogComments\Service\LanguageService;
 
 class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
 {
-
     protected function executeInternal()
     {
 
@@ -32,7 +30,7 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
 
         // Loop form and apply properties
         foreach ($this->finisherContext->getFormValues() ?? [] as $key => $value) {
-            if($comment->_hasProperty($key)) {
+            if ($comment->_hasProperty($key)) {
                 $comment->_setProperty($key, $value);
             }
         }
@@ -45,6 +43,6 @@ class Z7BlogCommentsDatabaseFinisher extends AbstractFinisher
         $this->objectManager->get(PersistenceManager::class)->persistAll();
 
         // Add comment to variable provider
-        $this->finisherContext->getFinisherVariableProvider()->add('Z7BlogComments','comment', $comment);
+        $this->finisherContext->getFinisherVariableProvider()->add('Z7BlogComments', 'comment', $comment);
     }
 }

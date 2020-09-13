@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\ViewHelpers\Translate;
 
@@ -12,12 +14,10 @@ use Zeroseven\Z7BlogComments\Service\LanguageService;
  */
 abstract class AbstractTranslateViewHelper extends AbstractTagBasedViewHelper
 {
-
     protected $tagName = 'a';
 
     public function initializeArguments(): void
     {
-
         parent::initializeArguments();
 
         $this->registerTagAttribute('class', 'string', 'CSS class(es) for this element');
@@ -54,5 +54,4 @@ abstract class AbstractTranslateViewHelper extends AbstractTagBasedViewHelper
 
         return $this->tag->render();
     }
-
 }

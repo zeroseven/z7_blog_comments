@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Domain\Traits;
 
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Annotation\ORM as Extbase;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 trait Post
 {
@@ -39,5 +41,4 @@ trait Post
         $this->commentMode = $mode;
         return $this;
     }
-
 }

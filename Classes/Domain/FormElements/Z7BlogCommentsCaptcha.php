@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Domain\FormElements;
 
@@ -7,7 +9,6 @@ use Zeroseven\Z7BlogComments\Service\EncryptionService;
 
 class Z7BlogCommentsCaptcha extends AbstractFormElement
 {
-
     public function initializeFormElement()
     {
 
@@ -21,5 +22,4 @@ class Z7BlogCommentsCaptcha extends AbstractFormElement
         $this->setProperty('title', 'hey');
         $this->properties['fluidAdditionalAttributes'] = array_merge($this->properties['fluidAdditionalAttributes'] ?? [], ['data-encrypted-key' => $encryptedKey]);
     }
-
 }

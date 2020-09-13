@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Service;
 
@@ -23,7 +25,7 @@ class LanguageService
 
         // The language detection always delivers a result.
         // So we're checking here that the input is long enough to determine the language code.
-        if(str_word_count($text) > 4 || strlen($text) > 24) {
+        if (str_word_count($text) > 4 || strlen($text) > 24) {
             return (string)GeneralUtility::makeInstance(Language::class)->detect($text)->limit(0, 1);
         }
 
