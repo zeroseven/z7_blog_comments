@@ -218,12 +218,12 @@ class Comment extends AbstractEntity
         $this->children = $children;
     }
 
-    public function getParent(): ?Comment
+    public function getParent(): ?self
     {
         return $this->parent;
     }
 
-    public function setParent(Comment $parent): self
+    public function setParent(self $parent): self
     {
         $this->parent = $parent;
         return $this;

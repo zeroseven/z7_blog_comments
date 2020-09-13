@@ -52,6 +52,6 @@ call_user_func(static function (string $table, int $dokType) {
     ]);
 
     // Add new fields to TCA of blog posts
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table,'--div--;LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.tab.comments, post_comment_mode, post_comments', (string)$dokType);
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes($table, '--div--;LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_db.xlf:pages.tab.comments, post_comment_mode, post_comments', (string)$dokType);
 
-},'pages', \Zeroseven\Z7Blog\Domain\Model\Post::DOKTYPE);
+}, 'pages', \Zeroseven\Z7Blog\Domain\Model\Post::DOKTYPE);
