@@ -8,4 +8,6 @@ use Zeroseven\Z7Blog\Domain\Demand\AbstractDemand;
 
 class CommentDemand extends AbstractDemand
 {
+    /** @var bool */
+    public $pending = false;
 }
