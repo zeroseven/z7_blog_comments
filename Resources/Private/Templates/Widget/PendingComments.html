@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{comments}">
+	<ul class="blgcmtwdgt">
+		<f:for each="{comments}" as="comment">
+			<li class="blgcmtwdgt__item">
+				<span class="blgcmtwdgt__text">{comment.text -> f:format.crop(maxCharacters: '160')}</span>
+				<span class="blgcmtwdgt__languge">
+					<blogComments:language.flag languageCode="{comment.languageCode}" />
+				</span>
+				<span class="blgcmtwdgt__author">{comment.name}</span>
+				<span class="blgcmtwdgt__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
+				<a href="{blogComments:uri.backend.delete(comment:comment)}">DELETE</a>
+				<a href="{blogComments:uri.backend.enable(comment:comment)}">ENABLE</a>
+			</li>
+		</f:for>
+	</ul>
+</f:if>
+</html>
