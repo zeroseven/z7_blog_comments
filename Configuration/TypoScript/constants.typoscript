@@ -1,5 +1,5 @@
 plugin.tx_z7blog.settings.comments {
-  includeCSS.notification = EXT:z7_blog_comments/Resources/Public/Css/Notification.dist.min.css
-  includeJS.z7_blog_ajaxsubmit = EXT:z7_blog_comments/Resources/Public/JavaScript/AjaxSubmit.dist.min.js
-  includeJS.z7_blog_reply = EXT:z7_blog_comments/Resources/Public/JavaScript/Reply.dist.min.js
+  includeCSS.notification = EXT:z7_blog_comments/Resources/Public/Css/Frontend/Notification.dist.min.css
+  includeJS.z7_blog_ajaxsubmit = EXT:z7_blog_comments/Resources/Public/JavaScript/Frontend/AjaxSubmit.dist.min.js
+  includeJS.z7_blog_reply = EXT:z7_blog_comments/Resources/Public/JavaScript/Frontend/Reply.dist.min.js
 }
