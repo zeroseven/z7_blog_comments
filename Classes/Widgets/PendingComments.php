@@ -56,16 +56,13 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface
 
     public function getRequireJsModules(): array
     {
-        return ['TYPO3/CMS/Z7BlogComments/Backend/PendingCommentsWidget' => 'function(test) {alert(1234 + test)}'];
+        return ['TYPO3/CMS/Z7BlogComments/Backend/PendingCommentsWidget'];
     }
 
     protected function getPendingComments(): ?array
     {
-        // Build demand
-        $demand = CommentDemand::makeInstance()->setPending(true);
-
         // Get pending comments
-        if ($result = GeneralUtility::makeInstance(CommentRepository::class)->findByDemand($demand)) {
+        if ($result = GeneralUtility::makeInstance(CommentRepository::class)->findPending()) {
             return array_filter($result->toArray(), static function ($comment) {
 
                 // This will check the permission of the user
