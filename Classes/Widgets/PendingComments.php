@@ -8,6 +8,7 @@ use FriendsOfTYPO3\Widgets\Widgets\Provider\UsersOnlineDataProvider;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface as Cache;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface;
 use TYPO3\CMS\Dashboard\Widgets\ButtonProviderInterface;
 use TYPO3\CMS\Dashboard\Widgets\RequireJsModuleInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
@@ -15,7 +16,7 @@ use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
-class PendingComments implements WidgetInterface, RequireJsModuleInterface
+class PendingComments implements WidgetInterface, RequireJsModuleInterface, AdditionalCssInterface
 {
 
     /**
@@ -57,6 +58,11 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface
         return ['TYPO3/CMS/Z7BlogComments/Backend/PendingCommentsWidget'];
     }
 
+    public function getCssFiles(): array
+    {
+        return ['EXT:z7_blog_comments/Resources/Public/Css/Backend/PendingCommentsWidget.dist.min.css'];
+    }
+
     protected function getPendingComments(): ?array
     {
         // Get pending comments
@@ -78,6 +84,7 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface
         $this->view->setTemplatePathAndFilename('EXT:z7_blog_comments/Resources/Private/Templates/Widget/PendingComments.html');
         $this->view->assignMultiple([
             'comments' => $this->getPendingComments(),
+            'configuration' => $this->configuration
         ]);
 
         // Ciao!

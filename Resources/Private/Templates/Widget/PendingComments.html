@@ -1,22 +1,38 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" data-namespace-typo3-fluid="true">
-<div class="pndngcmnt">
-	<f:if condition="{comments}">
-		<f:for each="{comments}" as="comment">
-			<div class="pndngcmnt__item js-pending-comment-item">
-				<span class="pndngcmnt__text">{comment.text -> f:format.crop(maxCharacters: '160')}</span>
-				<span class="pndngcmnt__languge">
-				<blogComments:language.flag languageCode="{comment.languageCode}"/>
-			</span>
-				<span class="pndngcmnt__author">{comment.name}</span>
-				<span class="pndngcmnt__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
-				<a href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.enable('{comment.uid}')">ENABLE</a>
-				<a href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">DELETE</a>
-			</div>
-		</f:for>
-	</f:if>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/core/ViewHelpers" data-namespace-typo3-fluid="true">
 
-	<p class="pndngcmnt__success">
-		Cool!
-	</p>
-</div>
+<f:layout name="Widget/Widget"/>
+
+<f:section name="title">
+	Pending comments
+</f:section>
+
+<f:section name="main">
+	<div class="pndngcmnt">
+		<f:if condition="{comments}">
+			<f:for each="{comments}" as="comment">
+				<div class="pndngcmnt__item js-pending-comment-item">
+					<blogComments:language.wrap class="pndngcmnt__text" languageCode="{comment.languageCode}" tagName="p">{comment.text -> f:format.crop(maxCharacters: '300')}</blogComments:language.wrap>
+					<span class="pndngcmnt__languge">
+						<blogComments:language.flag languageCode="{comment.languageCode}"/>
+					</span>
+					<span class="pndngcmnt__author">{comment.name}</span>
+					<span class="pndngcmnt__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
+					<a class="pndngcmnt__control--enable" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.enable('{comment.uid}')">
+						{core:icon(identifier: 'actions-approve')}
+					</a>
+					<a class="pndngcmnt__control--reject" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.reject('{comment.uid}')">
+						{core:icon(identifier: 'actions-ban')}
+					</a>
+					<a class="pndngcmnt__control--delete" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">
+						{core:icon(identifier: 'actions-delete')}
+					</a>
+				</div>
+			</f:for>
+		</f:if>
+
+		<p class="pndngcmnt__success">
+			Cool!
+		</p>
+	</div>
+</f:section>
 </html>
