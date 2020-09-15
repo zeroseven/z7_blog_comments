@@ -1,18 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{comments}">
-	<ul class="blgcmtwdgt">
+<div class="pndngcmnt">
+	<f:if condition="{comments}">
 		<f:for each="{comments}" as="comment">
-			<li class="blgcmtwdgt__item">
-				<span class="blgcmtwdgt__text">{comment.text -> f:format.crop(maxCharacters: '160')}</span>
-				<span class="blgcmtwdgt__languge">
-					<blogComments:language.flag languageCode="{comment.languageCode}" />
-				</span>
-				<span class="blgcmtwdgt__author">{comment.name}</span>
-				<span class="blgcmtwdgt__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
-				<a href="{blogComments:uri.backend.delete(comment:comment)}">DELETE</a>
-				<a href="{blogComments:uri.backend.enable(comment:comment)}">ENABLE</a>
-			</li>
+			<div class="pndngcmnt__item js-pending-comment-item">
+				<span class="pndngcmnt__text">{comment.text -> f:format.crop(maxCharacters: '160')}</span>
+				<span class="pndngcmnt__languge">
+				<blogComments:language.flag languageCode="{comment.languageCode}"/>
+			</span>
+				<span class="pndngcmnt__author">{comment.name}</span>
+				<span class="pndngcmnt__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
+				<a href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.enable('{comment.uid}')">ENABLE</a>
+				<a href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">DELETE</a>
+			</div>
 		</f:for>
-	</ul>
-</f:if>
+	</f:if>
+
+	<p class="pndngcmnt__success">
+		Cool!
+	</p>
+</div>
 </html>

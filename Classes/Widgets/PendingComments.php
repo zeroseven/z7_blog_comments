@@ -9,12 +9,10 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface as Cache;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Dashboard\Widgets\ButtonProviderInterface;
-use TYPO3\CMS\Dashboard\Widgets\ListDataProviderInterface;
 use TYPO3\CMS\Dashboard\Widgets\RequireJsModuleInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;
 use TYPO3\CMS\Fluid\View\StandaloneView;
-use Zeroseven\Z7BlogComments\Domain\Demand\CommentDemand;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
 class PendingComments implements WidgetInterface, RequireJsModuleInterface
