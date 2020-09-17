@@ -12,13 +12,13 @@
 				<source>Control comments</source>
 			</trans-unit>
 			<trans-unit id="widget.pendingComments.control.enable">
-				<source>Enable comment</source>
+				<source>Enable</source>
 			</trans-unit>
 			<trans-unit id="widget.pendingComments.control.reject">
-				<source>Reject comment</source>
+				<source>Reject</source>
 			</trans-unit>
 			<trans-unit id="widget.pendingComments.control.delete">
-				<source>Delete comment</source>
+				<source>Delete</source>
 			</trans-unit>
 			<trans-unit id="widget.pendingComments.empty">
 				<source>There are no pending comments.</source>

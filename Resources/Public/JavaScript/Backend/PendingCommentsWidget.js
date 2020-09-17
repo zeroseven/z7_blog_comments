@@ -1,7 +1,7 @@
 /**
  * Module: TYPO3/CMS/Z7BlogComments/Backend/PendingCommentsWidget
  */
-require(['TYPO3/CMS/Core/Ajax/AjaxRequest'], function (AjaxRequest) {
+require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/CMS/Core/Event/RegularEvent'], function (AjaxRequest, Tooltip, RegularEvent) {
 
   var PendingComments = {};
 
@@ -112,6 +112,17 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest'], function (AjaxRequest) {
       item.parentNode.removeChild(item);
     }
   };
+
+  // Show tooltip
+  new RegularEvent("widgetContentRendered", (function (e) {
+    e.preventDefault();
+
+    // Tooltip.initialize();
+    Tooltip.initialize('[data-tooltip]', {
+      trigger: 'hover',
+      title: function() {return this.dataset.tooltip; }
+    });
+  })).delegateTo(document, '.dashboard-item')
 
   // Add class to the context
   TYPO3 = TYPO3 || {};
