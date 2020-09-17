@@ -1,7 +1,7 @@
 /**
  * Module: TYPO3/CMS/Z7BlogComments/Backend/PendingCommentsWidget
  */
-require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/CMS/Core/Event/RegularEvent', 'TYPO3/CMS/Backend/InfoWindow'], function (AjaxRequest, Tooltip, RegularEvent, InfoWindow) {
+require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/CMS/Core/Event/RegularEvent', 'TYPO3/CMS/Backend/InfoWindow', 'TYPO3/CMS/Backend/Notification'], function (AjaxRequest, Tooltip, RegularEvent, InfoWindow, Notification) {
 
   /** @var string */
   const tableName = 'tx_z7blog_domain_model_comment';
@@ -67,6 +67,7 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
     const target = element || window.event.target;
     return handleRequest(parseInt(uid), {hidden: 0}, null, function () {
       removeItem(target);
+      Notification.success(null, TYPO3.lang['control.enabled'], 4);
     });
   };
 
@@ -81,6 +82,7 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
     const target = element || window.event.target;
     return handleRequest(parseInt(uid), null, null, function () {
       removeItem(target);
+      Notification.info(null, TYPO3.lang['control.rejected'], 4);
     });
   };
 
@@ -95,6 +97,7 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
     const target = element || window.event.target;
     return handleRequest(parseInt(uid), null, {delete: 1}, function () {
       removeItem(target);
+      Notification.info(null, TYPO3.lang['control.deleted'], 4);
     });
   };
 
@@ -116,7 +119,7 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
   const removeItem = function (target) {
     const item = target ? target.closest('.js-pending-comment-item') : null;
 
-    if(item) {
+    if (item) {
       item.parentNode.removeChild(item);
     }
   };
