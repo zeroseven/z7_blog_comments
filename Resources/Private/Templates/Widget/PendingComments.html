@@ -3,36 +3,41 @@
 <f:layout name="Widget/Widget"/>
 
 <f:section name="title">
-	Pending comments
+	{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.title')}
 </f:section>
 
 <f:section name="main">
-	<div class="pndngcmnt">
-		<f:if condition="{comments}">
-			<f:for each="{comments}" as="comment">
-				<div class="pndngcmnt__item js-pending-comment-item">
-					<blogComments:language.wrap class="pndngcmnt__text" languageCode="{comment.languageCode}" tagName="p">{comment.text -> f:format.crop(maxCharacters: '300')}</blogComments:language.wrap>
-					<span class="pndngcmnt__languge">
-						<blogComments:language.flag languageCode="{comment.languageCode}"/>
-					</span>
-					<span class="pndngcmnt__author">{comment.name}</span>
-					<span class="pndngcmnt__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
-					<a class="pndngcmnt__control--enable" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.enable('{comment.uid}')">
-						{core:icon(identifier: 'actions-approve')}
-					</a>
-					<a class="pndngcmnt__control--reject" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.reject('{comment.uid}')">
-						{core:icon(identifier: 'actions-ban')}
-					</a>
-					<a class="pndngcmnt__control--delete" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">
-						{core:icon(identifier: 'actions-delete')}
-					</a>
-				</div>
-			</f:for>
-		</f:if>
+	<f:spaceless>
+		<div class="pndngcmnts">
+			<f:if condition="{comments}">
+				<f:for each="{comments}" as="comment">
+					<div class="pndngcmnts__item js-pending-comment-item">
+						<blogComments:language.wrap class="pndngcmnts__text" languageCode="{comment.languageCode}" tagName="p">{comment.text -> f:format.crop(maxCharacters: '300')}</blogComments:language.wrap>
+						<span class="pndngcmnts__languge">
+							<blogComments:language.flag languageCode="{comment.languageCode}"/>
+						</span>
+						<span class="pndngcmnts__author">{comment.name}</span>
+						<span class="pndngcmnts__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
+						<a class="pndngcmnts__control--delete" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.delete')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">
+							{core:icon(identifier: 'actions-delete')}
+						</a>
+						<a class="pndngcmnts__control--reject" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.reject')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.reject('{comment.uid}')">
+							{core:icon(identifier: 'actions-ban')}
+						</a>
+						<a class="pndngcmnts__control--enable" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.enable')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.enable('{comment.uid}')">
+							{core:icon(identifier: 'actions-approve')}
+						</a>
+					</div>
+				</f:for>
+			</f:if>
 
-		<p class="pndngcmnt__success">
-			Cool!
-		</p>
-	</div>
+			<div class="pndngcmnts__success">
+				{core:icon(identifier: 'actions-check', size: 'large')}
+				<p>
+					{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.empty')}
+				</p>
+			</div>
+		</div>
+	</f:spaceless>
 </f:section>
 </html>
