@@ -13,11 +13,21 @@
 				<f:for each="{comments}" as="comment">
 					<div class="pndngcmnts__item js-pending-comment-item">
 						<blogComments:language.wrap class="pndngcmnts__text" languageCode="{comment.languageCode}" tagName="p">{comment.text -> f:format.crop(maxCharacters: '300')}</blogComments:language.wrap>
-						<span class="pndngcmnts__languge">
-							<blogComments:language.flag languageCode="{comment.languageCode}"/>
-						</span>
+						<f:if condition="{comment.languageCode}">
+							<span class="pndngcmnts__languge">
+								<blogComments:language.flag languageCode="{comment.languageCode}"/>
+							</span>
+						</f:if>
 						<span class="pndngcmnts__author">{comment.name}</span>
 						<span class="pndngcmnts__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
+						<f:if condition="{comment.parent}">
+							<a class="pndngcmnts__parent" href="javascript:void(0)" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.showParent')}" onclick="TYPO3.Blog.PendingComments.info('{comment.parent.uid}')">
+								{core:icon(identifier: 'actions-comment')}
+							</a>
+						</f:if>
+						<a class="pndngcmnts__info" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.info')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.info('{comment.uid}')">
+							{core:icon(identifier: 'actions-document-info')}
+						</a>
 						<a class="pndngcmnts__control--delete" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.delete')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">
 							{core:icon(identifier: 'actions-delete')}
 						</a>

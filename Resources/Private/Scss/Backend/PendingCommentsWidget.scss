@@ -55,10 +55,15 @@ $pending-comments-visible-items: 3;
 
 .pndngcmnts__languge,
 .pndngcmnts__author,
-.pndngcmnts__date {
+.pndngcmnts__date,
+.pndngcmnts__parent {
     font-size: 0.8em;
     float: left;
     padding: 8px 6px 0 0;
+
+    &, &:hover {
+        text-decoration: none;
+    }
 }
 
 .pndngcmnts__author,
@@ -66,6 +71,7 @@ $pending-comments-visible-items: 3;
     color: mix(#fff, #000);
 }
 
+.pndngcmnts__info,
 .pndngcmnts__control--enable,
 .pndngcmnts__control--reject,
 .pndngcmnts__control--delete {
@@ -77,6 +83,10 @@ $pending-comments-visible-items: 3;
     &:hover {
         border-color: #ff8700;
     }
+}
+
+.pndngcmnts__info:hover {
+    border-color: #6daae0;
 }
 
 .pndngcmnts__success {

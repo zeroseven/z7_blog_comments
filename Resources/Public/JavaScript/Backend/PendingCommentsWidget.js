@@ -1,7 +1,7 @@
 /**
  * Module: TYPO3/CMS/Z7BlogComments/Backend/PendingCommentsWidget
  */
-require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/CMS/Core/Event/RegularEvent'], function (AjaxRequest, Tooltip, RegularEvent) {
+require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/CMS/Core/Event/RegularEvent', 'TYPO3/CMS/Backend/InfoWindow'], function (AjaxRequest, Tooltip, RegularEvent, InfoWindow) {
 
   /** @var string */
   const tableName = 'tx_z7blog_domain_model_comment';
@@ -99,6 +99,16 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
   };
 
   /**
+   * Open info overlay
+   *
+   * @param uid
+   * @return void
+   */
+  const showInfo = function (uid) {
+    InfoWindow.showItem(tableName, uid);
+  };
+
+  /**
    * Remove item
    *
    * @param target
@@ -127,6 +137,7 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
   TYPO3.Blog.PendingComments = {
     'enable': enableComment,
     'reject': rejectComment,
-    'delete': deleteComment
+    'delete': deleteComment,
+    'info': showInfo
   };
 });

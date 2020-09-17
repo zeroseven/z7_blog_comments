@@ -11,6 +11,12 @@
 			<trans-unit id="widget.pendingComments.description">
 				<source>Control comments</source>
 			</trans-unit>
+			<trans-unit id="widget.pendingComments.showParent">
+				<source>Display previous comment</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.info">
+				<source>Display information</source>
+			</trans-unit>
 			<trans-unit id="widget.pendingComments.control.enable">
 				<source>Enable</source>
 			</trans-unit>
