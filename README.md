@@ -20,7 +20,26 @@ Ist die form-Erweiterung im Projekt schon im Einsatz, könnte ein bereits fertig
 
 ## Kommentare integrieren
 
-–
+-
+
+## Configure the extension
+
+### Configure Form:
+
+Not much to be done here. It's probably wise to override the form and finisher to fit in your project. 
+To use another form, you can alter this TypoScript constant `plugin.tx_z7blog.settings.comments.form` or [override the existing formDefinition in your TypoScript setup](https://docs.typo3.org/c/typo3/cms-form/master/en-us/I/Concepts/FrontendRendering/Index.html#typoscript-overrides) like the following example:
+
+```typo3_typoscript
+lib.Z7BlogCommentsForm.settings.formDefinitionOverrides.BlogCommentForm.finishers {
+  
+  # EmailToReceiver
+  3.options {
+    recipientAddress = b.a.baracus@ateam.com
+    carbonCopyRecipients = john.hannibal.smith@ateam.com, murdock@ateam.com
+    senderAddress = webmaster@ateam.com
+  }
+}
+```
 
 ## Todo's
 
