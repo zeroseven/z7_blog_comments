@@ -4,23 +4,23 @@
 		<header/>
 		<body>
 
-			<!-- BlogCommentForm.form.yaml -->
-			<trans-unit id="BlogCommentForm.element.name.properties.label">
+			<!-- Z7BlogComments.form.yaml -->
+			<trans-unit id="Z7BlogCommentsForm.element.name.properties.label">
 				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="BlogCommentForm.element.email.properties.label">
+			<trans-unit id="Z7BlogCommentsForm.element.email.properties.label">
 				<source>Email</source>
 			</trans-unit>
-			<trans-unit id="BlogCommentForm.element.email.properties.placeholder">
+			<trans-unit id="Z7BlogCommentsForm.element.email.properties.placeholder">
 				<source>Not be visible</source>
 			</trans-unit>
-			<trans-unit id="BlogCommentForm.element.url.properties.label">
+			<trans-unit id="Z7BlogCommentsForm.element.url.properties.label">
 				<source>Url</source>
 			</trans-unit>
-			<trans-unit id="BlogCommentForm.element.text.properties.label">
+			<trans-unit id="Z7BlogCommentsForm.element.text.properties.label">
 				<source>Your comment</source>
 			</trans-unit>
-			<trans-unit id="BlogCommentForm.finisher.Confirmation.message">
+			<trans-unit id="Z7BlogCommentsForm.finisher.Confirmation.message">
 				<source>Thanks for your comment. Please note that activation can take several hours.</source>
 			</trans-unit>
 

@@ -30,7 +30,7 @@ Not much to be done here. It's probably wise to override the form and finisher t
 To use another form, you can alter this TypoScript constant `plugin.tx_z7blog.settings.comments.form` or [override the existing formDefinition in your TypoScript setup](https://docs.typo3.org/c/typo3/cms-form/master/en-us/I/Concepts/FrontendRendering/Index.html#typoscript-overrides) like the following example:
 
 ```typo3_typoscript
-lib.Z7BlogCommentsForm.settings.formDefinitionOverrides.BlogCommentForm.finishers {
+lib.Z7BlogCommentsForm.settings.formDefinitionOverrides.Z7BlogCommentsForm.finishers {
   
   # EmailToReceiver
   3.options {
