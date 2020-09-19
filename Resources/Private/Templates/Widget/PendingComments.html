@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:blogComments="http://typo3.org/ns/Zeroseven/Z7BlogComments/ViewHelpers" xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/core/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <f:layout name="Widget/Widget"/>
 
@@ -21,20 +21,20 @@
 						<span class="pndngcmnts__author">{comment.name}</span>
 						<span class="pndngcmnts__date">{comment.createDate -> f:format.date(format: 'd-m-Y')}</span>
 						<f:if condition="{comment.parent}">
-							<a class="pndngcmnts__parent" href="javascript:void(0)" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.showParent')}" onclick="TYPO3.Blog.PendingComments.info('{comment.parent.uid}')">
+							<a class="pndngcmnts__parent" href="javascript:void(0)" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.showParent')}" onclick="TYPO3.Blog.PendingComments.info('{comment.parent.uid}')">
 								{core:icon(identifier: 'actions-comment')}
 							</a>
 						</f:if>
-						<a class="pndngcmnts__info" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.info')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.info('{comment.uid}')">
-							{core:icon(identifier: 'actions-document-info')}
-						</a>
-						<a class="pndngcmnts__control--delete" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.delete')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">
+						<be:link.editRecord class="pndngcmnts__edit" uid="{comment.uid}" table="tx_z7blog_domain_model_comment" returnUrl="{be:moduleLink(route: 'dashboard')}" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.edit')}">
+							{core:icon(identifier: 'actions-open')}
+						</be:link.editRecord>
+						<a class="pndngcmnts__control" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.delete')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.delete('{comment.uid}')">
 							{core:icon(identifier: 'actions-delete')}
 						</a>
-						<a class="pndngcmnts__control--reject" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.reject')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.reject('{comment.uid}')">
+						<a class="pndngcmnts__control" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.reject')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.reject('{comment.uid}')">
 							{core:icon(identifier: 'actions-ban')}
 						</a>
-						<a class="pndngcmnts__control--enable" data-tooltip="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.enable')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.enable('{comment.uid}')">
+						<a class="pndngcmnts__control" title="{f:translate(key:'LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.control.enable')}" href="javascript:void(0)" onclick="TYPO3.Blog.PendingComments.enable('{comment.uid}')">
 							{core:icon(identifier: 'actions-approve')}
 						</a>
 					</div>

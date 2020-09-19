@@ -71,10 +71,8 @@ $pending-comments-visible-items: 3;
     color: mix(#fff, #000);
 }
 
-.pndngcmnts__info,
-.pndngcmnts__control--enable,
-.pndngcmnts__control--reject,
-.pndngcmnts__control--delete {
+.pndngcmnts__edit,
+.pndngcmnts__control {
     float: right;
     padding: 4px;
     border: 1px solid #fff;
@@ -85,7 +83,7 @@ $pending-comments-visible-items: 3;
     }
 }
 
-.pndngcmnts__info:hover {
+.pndngcmnts__edit:hover {
     border-color: #6daae0;
 }
 

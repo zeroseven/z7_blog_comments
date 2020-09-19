@@ -14,8 +14,8 @@
 			<trans-unit id="widget.pendingComments.showParent">
 				<source>Display previous comment</source>
 			</trans-unit>
-			<trans-unit id="widget.pendingComments.info">
-				<source>Display information</source>
+			<trans-unit id="widget.pendingComments.edit">
+				<source>Edit</source>
 			</trans-unit>
 			<trans-unit id="widget.pendingComments.control.enable">
 				<source>Enable</source>

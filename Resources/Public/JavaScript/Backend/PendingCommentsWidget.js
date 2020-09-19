@@ -128,7 +128,7 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
   new RegularEvent("widgetContentRendered", (function (e) {
     e.preventDefault();
 
-    Tooltip.initialize('[data-tooltip]', {
+    Tooltip.initialize('[title]', {
       trigger: 'hover',
       title: function() { return this.dataset.tooltip; }
     });
