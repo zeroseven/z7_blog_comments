@@ -16,8 +16,8 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^10.4",
-    "typo3/cms-form": "^10.4",
+    "typo3/cms-core": "^9.5 || ^10.4",
+    "typo3/cms-form": "^9.5 || ^10.4",
     "zeroseven/z7-blog": ">=0.6",
     "patrickschur/language-detection": "^4.0",
     "ext-json": "*"

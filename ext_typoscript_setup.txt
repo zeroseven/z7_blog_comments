@@ -1,0 +1,18 @@
+config.tx_extbase.persistence.classes {
+  Zeroseven\Z7Blog\Domain\Model\Post {
+    mapping.columns {
+      post_comments.mapOnProperty = comments
+      post_comment_mode.mapOnProperty = commentMode
+    }
+  }
+
+  Zeroseven\Z7BlogComments\Domain\Model\Comment {
+    mapping {
+      tableName = tx_z7blog_domain_model_comment
+      columns {
+        pid.mapOnProperty = post
+        crdate.mapOnProperty = createDate
+      }
+    }
+  }
+}

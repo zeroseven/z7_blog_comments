@@ -11,6 +11,10 @@ TYPO3:
                   translationFiles:
                     1585640524: 'EXT:z7_blog_comments/Resources/Private/Language/locallang.xlf'
 
+                  # Compatibility the form extension in version 9.x
+                  translationFile:
+                    1585640524: 'EXT:z7_blog_comments/Resources/Private/Language/locallang.xlf'
+
                 partialRootPaths:
                   1599730087: 'EXT:z7_blog_comments/Resources/Private/Partials/Form/'
 
