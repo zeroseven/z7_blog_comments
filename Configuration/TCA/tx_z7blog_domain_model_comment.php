@@ -16,7 +16,7 @@ return [
         ],
         'searchFields' => 'name, email, url, comment',
         'typeicon_classes' => [
-            'default' => 'actions-chat'
+            'default' => 'plugin-z7blog-comment'
         ]
     ],
     'palettes' => [
