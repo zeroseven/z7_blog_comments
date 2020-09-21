@@ -36,6 +36,6 @@ lib.Z7BlogCommentsForm {
   pluginName = Formframework
   vendorName = TYPO3\CMS
   settings {
-    persistenceIdentifier = EXT:z7_blog_comments/Resources/Private/Yaml/Forms/BlogComment.form.yaml
+    persistenceIdentifier = {$plugin.tx_z7blog.settings.comments.form}
   }
 }

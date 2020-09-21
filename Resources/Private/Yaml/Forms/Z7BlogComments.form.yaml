@@ -5,7 +5,7 @@ renderingOptions:
 
 type: Form
 label: BlogComment
-identifier: BlogCommentForm
+identifier: Z7BlogCommentsForm
 prototypeName: standard
 finishers:
   -
