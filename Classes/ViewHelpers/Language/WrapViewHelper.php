@@ -32,7 +32,7 @@ class WrapViewHelper extends AbstractTagBasedViewHelper
 
         // Do nothing
         if (($this->arguments['languageCode'] === LanguageService::getLanguageCode() || empty($this->arguments['languageCode'])) && empty($this->arguments['tagName']) && empty($this->arguments['class']) && empty($this->arguments['dir']) && empty($this->arguments['id']) && empty($this->arguments['style']) && empty($this->arguments['title']) && empty($this->arguments['accesskey']) && empty($this->arguments['tabindex'])) {
-            return $content . '<h1>JO!!!</h1>';
+            return $content;
         }
 
         // Set the tag name
