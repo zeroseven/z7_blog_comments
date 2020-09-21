@@ -35,7 +35,7 @@ gulp.task('JavaScript', done => {
   // Define the file paths
   gulp.src(['./Resources/Private/JavaScript/**/*.js'])
 
-    // Make compatibility to older browser versions
+  // Make compatibility to older browser versions
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
