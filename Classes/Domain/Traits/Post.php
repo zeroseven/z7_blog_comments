@@ -20,7 +20,7 @@ trait Post
     /** @var int */
     protected $commentMode;
 
-    public function getComments(): ObjectStorage
+    public function getComments(): ?ObjectStorage
     {
         return $this->comments;
     }
