@@ -12,7 +12,7 @@
 				<source>Email</source>
 			</trans-unit>
 			<trans-unit id="Z7BlogCommentsForm.element.email.properties.placeholder">
-				<source>Not be visible</source>
+				<source>Will not be shown</source>
 			</trans-unit>
 			<trans-unit id="Z7BlogCommentsForm.element.url.properties.label">
 				<source>Url</source>

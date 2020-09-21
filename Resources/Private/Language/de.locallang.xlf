@@ -13,8 +13,8 @@
         <target>E-Mail</target>
       </trans-unit>
       <trans-unit id="Z7BlogCommentsForm.element.email.properties.placeholder">
-        <source>Not be visible</source>
-        <target state="translated">Nicht sichtbar sein</target>
+        <source>Will not be shown</source>
+        <target state="translated">Wird nicht angezeigt</target>
       </trans-unit>
       <trans-unit id="Z7BlogCommentsForm.element.url.properties.label">
         <source>Url</source>
