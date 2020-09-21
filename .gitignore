@@ -2,5 +2,5 @@
 node_modules
 Resources/Public/Css/**/*.css
 !Resources/Public/Css/**/*min.css
-Resources/Public/JavaScript/**/*.js
-!Resources/Public/JavaScript/**/*min.js
+Resources/Public/JavaScript/Frontend**/*.js
+!Resources/Public/JavaScript/Frontend**/*min.js

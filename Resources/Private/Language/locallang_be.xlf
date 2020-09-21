@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<header/>
+		<body>
+
+			<!-- Widget: Pending commentd -->
+			<trans-unit id="widget.pendingComments.title">
+				<source>Pending blog comments</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.description">
+				<source>Control comments</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.showParent">
+				<source>Display previous comment</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.edit">
+				<source>Edit</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.control.enable">
+				<source>Enable</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.control.reject">
+				<source>Reject</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.control.delete">
+				<source>Delete</source>
+			</trans-unit>
+			<trans-unit id="widget.pendingComments.empty">
+				<source>There are no pending comments.</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
