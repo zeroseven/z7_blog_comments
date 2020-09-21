@@ -10,9 +10,9 @@ plugin.tx_z7blog.settings {
 }
 
 #####################################################
-# Add Layout root paths
+# Add partial root paths (number between 1 and 99)
 #####################################################
-plugin.tx_z7blog.view.partialRootPaths.1599679732 = EXT:z7_blog_comments/Resources/Private/Partials/
+plugin.tx_z7blog.view.partialRootPaths.2 = EXT:z7_blog_comments/Resources/Private/Partials/
 
 ################################################
 # Include JavaScript
