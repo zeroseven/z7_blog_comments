@@ -17,7 +17,7 @@ class LanguageService
 
     public static function getLanguageCode(): string
     {
-        return (string)$GLOBALS['TSFE']->config['config']['language'];
+        return (string)$GLOBALS['TSFE']->sys_language_isocode;
     }
 
     public static function detectLanguageCode(string $text): string
