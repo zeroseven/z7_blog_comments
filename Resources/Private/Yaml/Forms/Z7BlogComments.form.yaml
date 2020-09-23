@@ -83,6 +83,11 @@ renderables:
         validators:
           -
             identifier: NotEmpty
+          -
+            identifier: StringLength
+            options:
+              minimum: 25
+              maximum: 1000
       -
         defaultValue: ''
         type: Z7BlogCommentsCaptcha
