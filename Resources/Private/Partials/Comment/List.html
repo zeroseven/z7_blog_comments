@@ -3,7 +3,7 @@
 <f:if condition="{post.comments}">
 	<div class="blgcmntlst">
 		<f:for each="{post.comments}" as="comment">
-			{f:render(partial: 'Comment/Item.html', arguments: '{comment:comment}')}
+			{f:render(partial: 'Comment/Item.html', arguments: '{comment:comment, post:post, settings:settings}')}
 		</f:for>
 	</div>
 </f:if>

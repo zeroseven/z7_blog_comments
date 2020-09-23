@@ -21,7 +21,11 @@
 				<core:icon identifier="actions-translate" />
 			</blogComments:translate.google>
 
-			<a href="#" onclick="Zeroseven.Blog.reply('#z7BlogCommentsForm--parent', '{comment.uid}', true)" title="Reply to {comment.name}">Reply</a>
+			<f:if condition="{post.commentMode}">
+				<f:else>
+					<a href="#" onclick="Zeroseven.Blog.reply('#z7BlogCommentsForm--parent', '{comment.uid}', true)" title="Reply to {comment.name}">Reply</a>
+				</f:else>
+			</f:if>
 		</f:if>
 	</div>
 </div>
@@ -33,7 +37,7 @@
 		<f:variable name="currentLevel" value="{f:if(condition:level, then:level, else: 0)}" />
 		<f:variable name="nextLevel" value="{currentLevel + 1}" />
 
-		{f:render(partial: 'Comment/Item.html', arguments: '{comment:comment, level:nextLevel}')}
+		{f:render(partial: 'Comment/Item.html', arguments: '{comment:comment, post:post, settings:settings, level:nextLevel}')}
 	</f:for>
 </f:if>
 </html>
