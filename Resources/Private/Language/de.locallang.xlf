@@ -26,7 +26,7 @@
       </trans-unit>
       <trans-unit id="Z7BlogCommentsForm.finisher.Confirmation.message">
         <source>Thanks for your comment. Please note that activation can take several hours.</source>
-        <target>Danke für Ihr Kommentar. Bitte beachten Sie dass die Aktivierung mehrere Stunden dauern kann.</target>
+        <target>Danke für Ihren Kommentar. Bitte beachten Sie dass die Aktivierung mehrere Stunden dauern kann.</target>
       </trans-unit>
       <!-- EmailToReceiver -->
       <trans-unit id="EmailToReceiver.control.description">
