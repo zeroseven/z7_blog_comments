@@ -29,7 +29,7 @@
       this.titleWrap = null;
 
       // Return form to the original position
-      if(resetFormOriginalPosition && this.formWrap) {
+      if (resetFormOriginalPosition && this.formWrap) {
         this.formWrapNextSibling.parentNode.insertBefore(this.formWrap, this.formWrapNextSibling);
       }
     }
@@ -51,21 +51,22 @@
       if (link.title) {
 
         // Create new node or use existing
-        const titleWrap = (this.titleWrap ? Zeroseven.Blog.Utility.removeChilds(this.titleWrap) : document.createElement('h3')); // At this point, SEO isn't that important as the crawler doesn't go through reply links.
+        const titleWrap = (this.titleWrap ? Zeroseven.Blog.Utility.removeChilds(this.titleWrap) : document.createElement('h3')); // At this point, SEO isn't that important as the crawler doesn't go through reply links. "H3" is used for a hopefully suitable layout.
+        titleWrap.setAttribute('role', 'status');
         titleWrap.className = 'js-comment-reply-title';
-        titleWrap.role = 'status';
         titleWrap.textContent = link.title + ' '; // Clear the titleWrap, set title and add space for the close icon
 
         const clear = titleWrap.appendChild(document.createElement('a'));
         clear.className = 'js-comment-reply-clear';
         clear.textContent = '×';
+        clear.tabIndex = 0;
         clear.href = 'javascript:void(0)';
         clear.addEventListener('click', () => {
           this.unset(appendFormToComment);
         });
 
         // Add wrapper to the dom
-        if(!this.titleWrap) {
+        if (!this.titleWrap) {
           this.field.parentNode.insertBefore(titleWrap, this.field);
         }
 
@@ -74,10 +75,14 @@
       }
 
       // Scroll to the form
-      (this.form || this.field.parentNode).scrollIntoView({
-        behavior: 'smooth'
-      });
-
+      const scrollToNode = this.form || this.field.parentNode;
+      if (typeof typeof Element.prototype.scrollIntoView === 'function') {
+        scrollToNode.scrollIntoView({
+          behavior: 'smooth'
+        });
+      } else {
+        window.scrollTo({top: scrollToNode.getBoundingClientRect().top + window.scrollY, left: 0, behavior: 'smooth'});
+      }
     }
   }
 
@@ -100,7 +105,7 @@
   };
 
   const resetReply = () => {
-    if(instance) {
+    if (instance) {
       instance.destroy();
     }
 
