@@ -64,7 +64,7 @@ renderables:
           -  identifier: NotEmpty
       -
         defaultValue: ''
-        type: Text
+        type: Url
         identifier: url
         label: 'Handle translations by the locallang.xlf file'
         validators:
