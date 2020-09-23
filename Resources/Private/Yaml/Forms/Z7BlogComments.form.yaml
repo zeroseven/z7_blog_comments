@@ -67,6 +67,11 @@ renderables:
         type: Text
         identifier: url
         label: 'Handle translations by the locallang.xlf file'
+        validators:
+          -
+            identifier: RegularExpression
+            options:
+              regularExpression: '/https?:\/\/((\w|[-_@])\.?)*\/?.*/'
       -
         defaultValue: ''
         type: Textarea
