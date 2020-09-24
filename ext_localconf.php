@@ -8,7 +8,8 @@ call_user_func(static function () {
 });
 
 // Register trait to extend posts
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['z7_blog']['traits'][\Zeroseven\Z7Blog\Domain\Model\Post::class][] = \Zeroseven\Z7BlogComments\Domain\Traits\Post::class;
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['z7_blog']['traits'][\Zeroseven\Z7Blog\Domain\Model\Post::class][] = \Zeroseven\Z7BlogComments\Domain\Traits\PostModel::class;
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['z7_blog']['traits'][\Zeroseven\Z7Blog\Domain\Demand\PostDemand::class][] = \Zeroseven\Z7BlogComments\Domain\Traits\PostDemand::class;
 
 // Register hooks
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Recordlist\RecordList\DatabaseRecordList::class]['modifyQuery'][] = \Zeroseven\Z7BlogComments\Hooks\DatabaseRecordList::class;

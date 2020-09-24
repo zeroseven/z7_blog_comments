@@ -2,10 +2,10 @@
 # Extend plugin settings
 #####################################################
 plugin.tx_z7blog.settings {
-  comments {
-    includeCSS.notification = {$plugin.tx_z7blog.settings.comments.includeCSS.notification}
-    includeJS.z7_blog_ajaxsubmit = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_ajaxsubmit}
-    includeJS.z7_blog_reply = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_reply}
+  includeCSS.comments_notification = {$plugin.tx_z7blog.settings.includeCSS.comments_notification}
+  includeJS {
+    comments_ajaxsubmit = {$plugin.tx_z7blog.settings.includeJS.comments_ajaxsubmit}
+    comments_reply = {$plugin.tx_z7blog.settings.includeJS.comments_reply}
   }
 }
 
@@ -17,8 +17,8 @@ plugin.tx_z7blog.view.partialRootPaths.2 = EXT:z7_blog_comments/Resources/Privat
 ################################################
 # Include JavaScript
 ################################################
-page.includeJSFooter.z7_blog_ajaxsubmit = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_ajaxsubmit}
-page.includeJSFooter.z7_blog_reply = {$plugin.tx_z7blog.settings.comments.includeJS.z7_blog_reply}
+page.includeJSFooter.z7_blog_comments_ajaxsubmit = {$plugin.tx_z7blog.settings.includeJS.comments_ajaxsubmit}
+page.includeJSFooter.z7_blog_comments_reply = {$plugin.tx_z7blog.settings.includeJS.comments_reply}
 
 ################################################
 # Register configuration

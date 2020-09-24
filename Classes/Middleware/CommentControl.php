@@ -36,8 +36,8 @@ class CommentControl implements MiddlewareInterface
         $pageRenderer->addFooterData($tagBuilder->render());
 
         // Add styles
-        if (($styles = SettingsService::getSettings('comments.includeCSS')) && ($stylePath = $styles['notification'] ?? null)) {
-            $absoluteStylePath = GeneralUtility::getFileAbsFileName($stylePath);
+        if ($notificationStyles = SettingsService::getSettings('includeCSS.comments_notification')) {
+            $absoluteStylePath = GeneralUtility::getFileAbsFileName($notificationStyles);
 
             if ($notificationStyles = file_exists($absoluteStylePath) ? file_get_contents($absoluteStylePath) : null) {
                 $pageRenderer->addCssInlineBlock(self::class, $notificationStyles, false, false);

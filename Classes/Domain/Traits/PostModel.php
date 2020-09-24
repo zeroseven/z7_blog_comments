@@ -7,7 +7,7 @@ namespace Zeroseven\Z7BlogComments\Domain\Traits;
 use TYPO3\CMS\Extbase\Annotation\ORM as Extbase;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-trait Post
+trait PostModel
 {
 
     /**
