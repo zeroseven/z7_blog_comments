@@ -7,6 +7,12 @@ services:
   Zeroseven\Z7BlogComments\:
     resource: '../Classes/*'
 
+  Zeroseven\Z7BlogComments\Hooks\StructuredData:
+    tags:
+      - name: event.listener
+        identifier: 'z7-blog-comments/structured-data'
+        event: Zeroseven\Z7Blog\Event\StructuredDataEvent
+
   dashboard.widget.pendingComments:
     class: 'Zeroseven\Z7BlogComments\Widgets\PendingComments'
     arguments:

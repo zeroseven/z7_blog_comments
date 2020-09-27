@@ -180,7 +180,8 @@ return [
         ],
         'parent' => [
             'config' => [
-                'type' => 'passthrough'
+                'type' => 'passthrough',
+                'foreign_table' => 'tx_z7blog_domain_model_comment',
             ]
         ],
         'pending' => [
