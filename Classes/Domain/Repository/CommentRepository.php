@@ -3,8 +3,10 @@
 namespace Zeroseven\Z7BlogComments\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use Zeroseven\Z7Blog\Domain\Demand\AbstractDemand;
+use Zeroseven\Z7Blog\Domain\Model\Post;
 use Zeroseven\Z7Blog\Domain\Repository\AbstractRepository;
 use Zeroseven\Z7BlogComments\Domain\Demand\CommentDemand;
 
@@ -17,20 +19,48 @@ class CommentRepository extends AbstractRepository
         $this->setDefaultQuerySettings($querySettings);
     }
 
+    public function createQuery(): QueryInterface
+    {
+
+        // Get "original" query object
+        $query = parent::createQuery();
+
+        // Add default constraints
+        $query->matching(
+            $query->logicalOr(
+                $query->equals('parent', 0),
+                $query->logicalAnd(
+                    $query->equals('parent.deleted', 0),
+                    $query->equals('parent.hidden', 0)
+                )
+            )
+        );
+
+        return $query;
+    }
+
     protected function initializeDemand(): AbstractDemand
     {
         return CommentDemand::makeInstance();
     }
 
-    public function findPending(): ?QueryResultInterface
+    public function findPending(bool $respectRestrictions = null): ?QueryResultInterface
     {
+
+        // Respect restrictions on query
+        if ($respectRestrictions) {
+            return parent::findByPending();
+        }
 
         // Create query
         $query = $this->createQuery();
 
         // Set constraint
         $query->matching(
-            $query->equals('pending', 1)
+            $query->logicalAnd(
+                $query->getConstraint(),
+                $query->equals('pending', 1)
+            )
         );
 
         // Allow hidden pages
