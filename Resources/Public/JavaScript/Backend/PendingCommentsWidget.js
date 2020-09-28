@@ -130,7 +130,9 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
 
     Tooltip.initialize('[title]', {
       trigger: 'hover',
-      title: function() { return this.dataset.tooltip; }
+      title: function () {
+        return this.dataset.tooltip;
+      }
     });
   })).delegateTo(document, '.dashboard-item')
 

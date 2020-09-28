@@ -26,15 +26,15 @@ $pending-comments-visible-items: 3;
     }
 
     // Show first 3 results only
-    display:none;
+    display: none;
 
-    &:nth-child(-n+#{$pending-comments-visible-items}){
-        display:block;
+    &:nth-child(-n+#{$pending-comments-visible-items}) {
+        display: block;
     }
 
     // Animate the new comming result
     @supports (animation-fill-mode: forwards) {
-        &:nth-child(#{$pending-comments-visible-items}){
+        &:nth-child(#{$pending-comments-visible-items}) {
             animation: pending-comment-item $pending-comments-animation-duration ease-out $pending-comments-animation-delay;
             animation-fill-mode: forwards;
             opacity: 0;

@@ -101,7 +101,6 @@
 
     // And action!
     replyHandler.set(value, (target || event.target), appendFormToComment);
-
   };
 
   const resetReply = () => {
