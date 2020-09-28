@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'frontend' => [
         'zeroseven/z7_blog/comment_control' => [
