@@ -12,7 +12,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class FlagViewHelper extends AbstractViewHelper
 {
-
     protected $escapeOutput = false;
 
     protected $escapeChildren = false;
@@ -24,12 +23,11 @@ class FlagViewHelper extends AbstractViewHelper
 
     protected function getIconName(): string
     {
-
         $code = strtolower(substr($this->arguments['languageCode'], 0, 2));
 
         // Ok, this is a bit hacky … sorry!
         // Merge "en" languages …
-        if($code === 'en') {
+        if ($code === 'en') {
             $code = 'en-us-gb';
         }
 

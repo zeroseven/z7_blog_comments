@@ -6,7 +6,6 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use Zeroseven\Z7Blog\Domain\Demand\AbstractDemand;
-use Zeroseven\Z7Blog\Domain\Model\Post;
 use Zeroseven\Z7Blog\Domain\Repository\AbstractRepository;
 use Zeroseven\Z7BlogComments\Domain\Demand\CommentDemand;
 

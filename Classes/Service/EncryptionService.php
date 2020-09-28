@@ -8,7 +8,6 @@ use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 class EncryptionService
 {
-
     /**
      * Generate an key depending on current page.
      * The key will be changed daily.
