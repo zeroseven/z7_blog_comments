@@ -8,6 +8,7 @@
 		<f:if condition="{comment.url}">
 			<f:link.external uri="{comment.url}" class="blgcmnt__url" rel="external" target="_blank">{comment.url}</f:link.external>
 		</f:if>
+		<span class="blgcmnt__date">{comment.createDate -> f:format.date(format: 'd.m.Y')}</span>
 	</div>
 
 	<f:comment><!-- Comment text --></f:comment>
