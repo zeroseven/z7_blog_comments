@@ -13,8 +13,6 @@ use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
 class ControlService
 {
-    public const PARAMETER = 'tx_z7blogcomments';
-
     public const STATE_ENABLED = 1;
 
     public const STATE_REJECTED = 2;
@@ -50,7 +48,7 @@ class ControlService
             ->setTargetPageUid($pageUid ?: $GLOBALS['TSFE']->id)
             ->setSection('comment-' . $comment->getUid())
             ->setNoCache(true)
-            ->setArguments([self::PARAMETER => [
+            ->setArguments([RequestService::REQUEST_KEY => [
                 'permission_key' => $comment->getPermissionKey(),
                 'action' => $action
             ]])->build();
@@ -94,14 +92,9 @@ class ControlService
         self::initializeClass(PersistenceManager::class)->persistAll();
     }
 
-    public static function control(): int
+    public static function control(string $action, string $permissionKey): int
     {
-        if (
-            ($parameter = GeneralUtility::_GET(self::PARAMETER))
-            && ($action = $parameter['action'])
-            && ($permissionKey = $parameter['permission_key'])
-            && ($comment = self::initializeClass(CommentRepository::class)->findByPermissionKey($permissionKey))
-        ) {
+        if ($comment = self::initializeClass(CommentRepository::class)->findByPermissionKey($permissionKey)) {
             if (!$comment->isPending()) {
                 return self::STATE_EXPIRED;
             }

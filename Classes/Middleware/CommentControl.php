@@ -8,66 +8,45 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Http\RedirectResponse;
+use TYPO3\CMS\Core\Http\Uri;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Service\CacheService;
-use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
-use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
-use Zeroseven\Z7Blog\Service\SettingsService;
 use Zeroseven\Z7BlogComments\Service\ControlService;
+use Zeroseven\Z7BlogComments\Service\RequestService;
 
 class CommentControl implements MiddlewareInterface
 {
-    protected function setNotification(string $translationKey, string $state): void
-    {
-
-        // Translate Message
-        $message = LocalizationUtility::translate($translationKey, 'z7_blog_comments') ?: $translationKey;
-
-        // Build tag
-        $tagBuilder = GeneralUtility::makeInstance(TagBuilder::class, 'p', $message);
-        $tagBuilder->addAttribute('role', 'status');
-        $tagBuilder->addAttribute('class', 'blgcmnt-notification--' . $state);
-
-        // Add content to page
-        $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-        $pageRenderer->addFooterData($tagBuilder->render());
-
-        // Add styles
-        if ($notificationStyles = SettingsService::getSettings('includeCSS.comments_notification')) {
-            $absoluteStylePath = GeneralUtility::getFileAbsFileName($notificationStyles);
-
-            if ($notificationStyles = file_exists($absoluteStylePath) ? file_get_contents($absoluteStylePath) : null) {
-                $pageRenderer->addCssInlineBlock(self::class, $notificationStyles, false, false);
-            }
-        }
-    }
-
-    protected function clearPageCache(): void
-    {
-        GeneralUtility::makeInstance(ObjectManager::class)->get(CacheService::class)->ClearPageCache($GLOBALS['TSFE']->id);
-    }
-
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        if ($GLOBALS['TSFE'] instanceof TypoScriptFrontendController && $state = ControlService::control()) {
+        if (
+            $GLOBALS['TSFE'] instanceof TypoScriptFrontendController
+            && ($action = RequestService::getArgument('action'))
+            && ($permissionKey = RequestService::getArgument('permission_key'))
+        ) {
+            // Control comment
+            $state = ControlService::control($action, $permissionKey);
 
-            // Show notification
-            if ($state === ControlService::STATE_ENABLED) {
-                $this->setNotification('control.enabled', 'success');
-                $this->clearPageCache();
-            } elseif ($state === ControlService::STATE_REJECTED) {
-                $this->setNotification('control.rejected', 'info');
-            } elseif ($state === ControlService::STATE_DELETED) {
-                $this->setNotification('control.deleted', 'info');
-            } elseif ($state === ControlService::STATE_EXPIRED) {
-                $this->setNotification('control.expired', 'error');
-            }
+            // Clear cache
+            GeneralUtility::makeInstance(ObjectManager::class)->get(CacheService::class)->ClearPageCache($GLOBALS['TSFE']->id);
 
-            // Return request …
-            return $handler->handle($request)->withHeader('X-Robots-Tag', 'noindex')->withHeader('X-Blog-Comment-State', (string)$state);
+            // Create typoLink
+            $typolink = GeneralUtility::makeInstance(ContentObjectRenderer::class)->typoLink_URL([
+                'parameter' => $GLOBALS['TSFE']->id,
+                'forceAbsoluteUrl' => true,
+                'no_cache' => true,
+                'additionalParams' => '&' . RequestService::REQUEST_KEY . '[' . StateNotification::ARGUMENT . ']=' . $state,
+                'addQueryString' => false
+            ]);
+
+            // Create Uri object
+            $url = GeneralUtility::makeInstance(Uri::class, $typolink);
+
+            // Forward to show notification, ciao!
+            return GeneralUtility::makeInstance(RedirectResponse::class, $url, 307, ['X-Redirect-By' => 'TYPO3 Redirect: z7_blog_comments']);
         }
 
         return $handler->handle($request);
