@@ -6,6 +6,7 @@ namespace Zeroseven\Z7BlogComments\Widgets;
 
 use FriendsOfTYPO3\Widgets\Widgets\Provider\UsersOnlineDataProvider;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface as Cache;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface;
@@ -41,14 +42,22 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface, Addi
         return ['EXT:z7_blog_comments/Resources/Public/Css/Backend/PendingCommentsWidget.dist.min.css'];
     }
 
+    protected function getBackendUser(): BackendUserAuthentication
+    {
+        return $GLOBALS['BE_USER'];
+    }
+
     protected function getPendingComments(): ?array
     {
+        /** @var BackendUserAuthentication */
+        $backendUser = $this->getBackendUser();
+
         // Get pending comments
         if ($result = GeneralUtility::makeInstance(CommentRepository::class)->findPending()) {
-            return array_filter($result->toArray(), static function ($comment) {
+            return array_filter($result->toArray(), static function ($comment) use ($backendUser) {
 
                 // This will check the permission of the user
-                return is_array(BackendUtility::getRecord('pages', $comment->getUid()));
+                return $backendUser->doesUserHaveAccess(BackendUtility::getRecord('pages', $comment->getPid()), 1);
             });
         }
 
