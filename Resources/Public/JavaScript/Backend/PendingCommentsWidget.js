@@ -13,7 +13,7 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
    * @param updateFields
    * @param commands
    * @param callback
-   * @return bool
+   * @return void
    */
   const handleRequest = function (uid, updateFields, commands, callback) {
 
@@ -44,16 +44,31 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
 
     // Process request
     new AjaxRequest(TYPO3.settings.ajaxUrls.record_process).withQueryArguments(queryArguments).get().then(async function (response) {
-      const resolved = await response.resolve();
+      const result = await response.resolve();
 
       // Call callback function
       if (typeof callback === 'function') {
-        callback(resolved);
+        callback(result);
       }
-
-      // Return state
-      return resolved.hasErrors;
     });
+  };
+
+  /**
+   * Handle resolve
+   *
+   * @param resolve
+   * @param state
+   * @param message
+   * @param item
+   * @return void
+   */
+  const handleResult = function (resolve, state, message, item) {
+    if(resolve.hasErrors) {
+      Notification.error(resolve.messages && resolve.messages[0] && resolve.messages[0].title ? resolve.messages[0].title : null, resolve.messages && resolve.messages[0] && resolve.messages[0].message ? resolve.messages[0].message : 'An error occurred');
+    } else {
+      Notification[state](null, message, 4);
+      removeItem(item);
+    }
   };
 
   /**
@@ -65,9 +80,8 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
    */
   const enableComment = function (uid, element) {
     const target = element || window.event.target;
-    return handleRequest(parseInt(uid), {hidden: 0}, null, function () {
-      removeItem(target);
-      Notification.success(null, TYPO3.lang['control.enabled'], 4);
+    return handleRequest(parseInt(uid), {hidden: 0}, null, function (result) {
+      handleResult(result, 'success', TYPO3.lang['control.enabled'], target);
     });
   };
 
@@ -80,9 +94,8 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
    */
   const rejectComment = function (uid, element) {
     const target = element || window.event.target;
-    return handleRequest(parseInt(uid), null, null, function () {
-      removeItem(target);
-      Notification.info(null, TYPO3.lang['control.rejected'], 4);
+    return handleRequest(parseInt(uid), null, null, function (result) {
+      handleResult(result, 'info', TYPO3.lang['control.rejected'], target);
     });
   };
 
@@ -95,9 +108,8 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
    */
   const deleteComment = function (uid, element) {
     const target = element || window.event.target;
-    return handleRequest(parseInt(uid), null, {delete: 1}, function () {
-      removeItem(target);
-      Notification.info(null, TYPO3.lang['control.deleted'], 4);
+    return handleRequest(parseInt(uid), null, {delete: 1}, function (result) {
+      handleResult(result, 'info', TYPO3.lang['control.deleted'], target);
     });
   };
 
