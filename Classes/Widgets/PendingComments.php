@@ -71,14 +71,10 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface, Addi
         // Get the comments table name
         $tableName = GeneralUtility::makeInstance(ObjectManager::class)->get(DataMapper::class)->getDataMap(Comment::class)->getTableName();
 
-        // Check permissions
-        if (!$this->getBackendUser()->check('tables_modify', $tableName)) {
-            return LocalizationUtility::translate('LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.error.permissions', null, [0 => $tableName]);
-        }
-
         // Setup view
         $this->view->setTemplatePathAndFilename('EXT:z7_blog_comments/Resources/Private/Templates/Widget/PendingComments.html');
         $this->view->assignMultiple([
+            'unauthorizedTable' => $this->getBackendUser()->check('tables_modify', $tableName) ? null : $tableName,
             'comments' => $this->getPendingComments(),
             'configuration' => $this->configuration
         ]);

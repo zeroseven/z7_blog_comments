@@ -115,3 +115,10 @@ $pending-comments-visible-items: 3;
         display: none;
     }
 }
+
+.pndngcmnts__error {
+    display: block;
+    color: red;
+    font-weight: bold;
+    padding: 1em 0;
+}

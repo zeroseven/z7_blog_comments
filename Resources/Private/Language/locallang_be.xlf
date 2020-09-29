@@ -29,8 +29,8 @@
 			<trans-unit id="widget.pendingComments.empty">
 				<source>There are no pending comments.</source>
 			</trans-unit>
-			<trans-unit id="widget.pendingComments.error.permissions">
-				<source>You do not have the necessary permissions to manage the comments. Please contact the system administrator to authorize table "%s" for you.</source>
+			<trans-unit id="widget.pendingComments.error.unauthorizedTable">
+				<source>You do not have the necessary permissions to manage the comments. Please contact your system administrator to authorize table "%s" for you.</source>
 			</trans-unit>
 
 		</body>
