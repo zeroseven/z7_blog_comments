@@ -59,15 +59,15 @@ require(['TYPO3/CMS/Core/Ajax/AjaxRequest', 'TYPO3/CMS/Backend/Tooltip', 'TYPO3/
    * @param resolve
    * @param state
    * @param message
-   * @param item
+   * @param target
    * @return void
    */
-  const handleResult = function (resolve, state, message, item) {
+  const handleResult = function (resolve, state, message, target) {
     if(resolve.hasErrors) {
       Notification.error(resolve.messages && resolve.messages[0] && resolve.messages[0].title ? resolve.messages[0].title : null, resolve.messages && resolve.messages[0] && resolve.messages[0].message ? resolve.messages[0].message : 'An error occurred');
     } else {
       Notification[state](null, message, 4);
-      removeItem(item);
+      removeItem(target);
     }
   };
 
