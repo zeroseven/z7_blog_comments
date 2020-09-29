@@ -19,38 +19,16 @@ use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 class PendingComments implements WidgetInterface, RequireJsModuleInterface, AdditionalCssInterface
 {
 
-    /**
-     * @var WidgetConfigurationInterface
-     */
+    /** @var WidgetConfigurationInterface  */
     private $configuration;
 
-    /**
-     * @var StandaloneView
-     */
+    /** @var StandaloneView */
     private $view;
-
-    /**
-     * @var Cache
-     */
-    private $cache;
-
-    /**
-     * @var array
-     */
-    private $options;
-
-    /**
-     * @var ButtonProviderInterface|null
-     */
-    private $buttonProvider;
 
     public function __construct(WidgetConfigurationInterface $configuration, UsersOnlineDataProvider $dataProvider, StandaloneView $view, $buttonProvider = null, array $options = [])
     {
         $this->configuration = $configuration;
         $this->view = $view;
-        $this->options = $options;
-        $this->buttonProvider = $buttonProvider;
-        $this->dataProvider = $dataProvider;
     }
 
     public function getRequireJsModules(): array
@@ -79,7 +57,6 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface, Addi
 
     public function renderWidgetContent(): string
     {
-
         // Setup view
         $this->view->setTemplatePathAndFilename('EXT:z7_blog_comments/Resources/Private/Templates/Widget/PendingComments.html');
         $this->view->assignMultiple([
