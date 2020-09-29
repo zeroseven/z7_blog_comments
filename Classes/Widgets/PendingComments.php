@@ -7,20 +7,22 @@ namespace Zeroseven\Z7BlogComments\Widgets;
 use FriendsOfTYPO3\Widgets\Widgets\Provider\UsersOnlineDataProvider;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface as Cache;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface;
-use TYPO3\CMS\Dashboard\Widgets\ButtonProviderInterface;
 use TYPO3\CMS\Dashboard\Widgets\RequireJsModuleInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
+use Zeroseven\Z7BlogComments\Domain\Model\Comment;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
 
 class PendingComments implements WidgetInterface, RequireJsModuleInterface, AdditionalCssInterface
 {
 
-    /** @var WidgetConfigurationInterface  */
+    /** @var WidgetConfigurationInterface */
     private $configuration;
 
     /** @var StandaloneView */
@@ -66,6 +68,14 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface, Addi
 
     public function renderWidgetContent(): string
     {
+        // Get the comments table name
+        $tableName = GeneralUtility::makeInstance(ObjectManager::class)->get(DataMapper::class)->getDataMap(Comment::class)->getTableName();
+
+        // Check permissions
+        if (!$this->getBackendUser()->check('tables_modify', $tableName)) {
+            return LocalizationUtility::translate('LLL:EXT:z7_blog_comments/Resources/Private/Language/locallang_be.xlf:widget.pendingComments.error.permissions', null, [0 => $tableName]);
+        }
+
         // Setup view
         $this->view->setTemplatePathAndFilename('EXT:z7_blog_comments/Resources/Private/Templates/Widget/PendingComments.html');
         $this->view->assignMultiple([
