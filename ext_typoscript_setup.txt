@@ -15,4 +15,6 @@ config.tx_extbase.persistence.classes {
       }
     }
   }
+
+  Zeroseven\Z7BlogComments\Domain\Model\TraitCollector\CommentTraitCollector.mapping.tableName = tx_z7blog_domain_model_comment
 }
