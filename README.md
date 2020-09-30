@@ -20,7 +20,23 @@ Ist die form-Erweiterung im Projekt schon im Einsatz, könnte ein bereits fertig
 
 ## Kommentare integrieren
 
--
+Dies kannst du per TypoScript oder über einen ViewHelper machen. Für mehr Infos schau dazu in die README der Erweiterung z7_blog.
+
+Hier ein Beispiel für die Integration per TypoScript:
+
+```typo3_typoscript
+page.131088 = USER
+page.131088 {
+  userFunc = Zeroseven\Z7Blog\Utility\PostInfoRenderUtility->renderUserFunc
+  file = EXT:z7_blog_comments/Resources/Private/Partials/Post/Info/Comments.html
+}
+
+```
+
+## Kommentare erweitern
+
+Alles was du hier machen musst ist zuerst das Comment-Domain-Model zu erweitern. Den Name der neuen Property musst du dann nur noch als indentifer für ein neues Formular-Feld verwenden.
+Beim Versenden des Formulars werden für alle Eingabe-Daten anhand des identifiers die enstsprechenden Propertis im Domain-Model gefüllt und in der Datenbank gespeichert. 
 
 ## Configure the extension
 
@@ -40,8 +56,3 @@ lib.Z7BlogCommentsForm.settings.formDefinitionOverrides.Z7BlogCommentsForm.finis
   }
 }
 ```
-
-## Todo's
-
-* Widget
-* Implement to post structured data by PSR-14 event
