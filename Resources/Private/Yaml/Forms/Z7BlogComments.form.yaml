@@ -89,6 +89,9 @@ renderables:
               minimum: 25
               maximum: 1000
       -
+        type: Z7BlogCommentsPrivacyPolicy
+        identifier: privacypolicy
+      -
         defaultValue: ''
         type: Z7BlogCommentsCaptcha
-        identifier: hidden-1
+        identifier: captcha

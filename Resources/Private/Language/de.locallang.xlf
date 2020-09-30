@@ -72,6 +72,15 @@
         <source>An error has occurred. Please try again. Otherwise activate JavaScript or use a more modern browser.</source>
         <target>Ein Fehler ist aufgetreten. Bitte erneut versuchen. Andernfalls aktivieren Sie JavaScript oder verwenden einen moderneren Browser.</target>
       </trans-unit>
+	  <!-- Form elements -->
+	  <trans-unit id="element.Z7BlogCommentsPrivacyPolicy.text">
+	 	<source>By submitting this form, I confirm that I have read and understood the %s.</source>
+	 	<target>Durch Absenden dieses Formulars bestätige ich, dass ich die %s gelesen und verstanden habe.</target>
+	  </trans-unit>
+	  <trans-unit id="element.Z7BlogCommentsPrivacyPolicy.link">
+		<source>privacy policy</source>
+		<target>Datenschutzerklärung</target>
+	  </trans-unit>
     </body>
   </file>
 </xliff>

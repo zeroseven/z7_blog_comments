@@ -62,6 +62,14 @@
 				<source>An error has occurred. Please try again. Otherwise activate JavaScript or use a more modern browser.</source>
 			</trans-unit>
 
+			<!-- Form elements -->
+			<trans-unit id="element.Z7BlogCommentsPrivacyPolicy.text">
+				<source>By submitting this form, I confirm that I have read and understood the %s.</source>
+			</trans-unit>
+			<trans-unit id="element.Z7BlogCommentsPrivacyPolicy.link">
+				<source>privacy policy</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

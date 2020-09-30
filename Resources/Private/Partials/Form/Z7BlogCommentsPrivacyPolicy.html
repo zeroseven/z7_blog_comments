@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+	<f:render partial="Field/Field" arguments="{element: element, doNotShowLabel: 1}" contentAs="elementContent">
+
+		<f:comment><!-- Create link --></f:comment>
+		<f:variable name="link" value="{f:translate(key:'element.Z7BlogCommentsPrivacyPolicy.link', extensionName: 'z7_blog_comments') -> f:link.typolink(parameter: element.properties.link, target: '_blank', class: 'blgcmntfrm__dataprivacy-link')}" />
+
+		<f:comment><!-- Render text and add link as argument --></f:comment>
+		<div class="blgcmntfrm__dataprivacy">
+			{f:translate(key: 'element.Z7BlogCommentsPrivacyPolicy.text', extensionName: 'z7_blog_comments', arguments: '{0:link}') -> f:format.raw()}
+		</div>
+	</f:render>
+</formvh:renderRenderable>
+</html>

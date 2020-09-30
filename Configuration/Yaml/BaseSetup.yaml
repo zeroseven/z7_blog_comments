@@ -25,6 +25,11 @@ TYPO3:
               validators:
                 - identifier: Z7BlogCommentsCaptcha
 
+            Z7BlogCommentsPrivacyPolicy:
+              __inheritances:
+                10: 'TYPO3.CMS.Form.prototypes.standard.formElementsDefinition.StaticText'
+              implementationClassName: 'Zeroseven\Z7BlogComments\Domain\FormElements\Z7BlogCommentsPrivacyPolicy'
+
           finishersDefinition:
             Z7BlogCommentsVariableProvider:
               implementationClassName: 'Zeroseven\Z7BlogComments\Domain\Finishers\Z7BlogCommentsVariableProvider'

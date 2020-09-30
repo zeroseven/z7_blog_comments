@@ -18,8 +18,7 @@ class Z7BlogCommentsCaptcha extends AbstractFormElement
         // Get encryption key
         $encryptedKey = EncryptionService::encryptKey();
 
-        // Set to data attribute
-        $this->setProperty('title', 'hey');
+        // Set data attribute
         $this->properties['fluidAdditionalAttributes'] = array_merge($this->properties['fluidAdditionalAttributes'] ?? [], ['data-encrypted-key' => $encryptedKey]);
     }
 }
