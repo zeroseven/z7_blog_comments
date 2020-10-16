@@ -1,30 +1,28 @@
-# Kommentar-Funktion für [z7_blog](https://github.com/zeroseven/z7_blog)
+# Comment function for the [z7_blog](https://github.com/zeroseven/z7_blog)
 
-Mit dieser Erweiterung kannst du deinen Blog um eine Kommentar-Funktion erweitern. 
-Damit sich Kommentare für dich möglichst einfach verwalten lassen, unterstützt dich diese Erweiterung mit E-Mailbenachrichtigen, einem Dashboard Widget und weiteren Einstellungsmöglichkeiten direkt in den Posts.   
+With this extension you can extend your blog with a comment function.  
+For all comments to be easily managed by you, this extension supports you with notifications via email, a dashboard widget and further settings directly in your blog posts.
 
 ## :lollipop: Feature overview
 
-* E-Mailbenachrichtigungen
-* Dashboard Widget
-* Automatische Spracherkennung
-* Antworten auf Kommentare möglich
-* Erweiterung von Strukturierten Daten
-* Automatischer Captcha
+* Email notifications
+* Dashboard widget
+* Automatic language detection of comments
+* Reply function
+* Extension of structured data
+* Automatic captcha
 
-## :capital_abcd: Sprach-Konzept
+## :capital_abcd: Language concept
 
-Kommentare sind wichtige User-Signale die auch auf schwächer besuchten Übersetzungen nicht fehlen sollten. 
-Daher werden diese über alle Sprachen hinweg angezeigt. 
+Comments are important user signals that shouldn't be missed on translated pages with less traffic. Therefore, comments are displayed across all page translations.
 
-Damit dies für SEO und Screenreader keine Probleme darstellt, werden Kommentare automatisch mit der jeweiligen Sprache gekennzeichnet.
+For this to not be a problem with your SEO or screenreader compatibility, comments will be automatically tagged with their corresponding language.
 
-##:memo: Basierend auf der TYPO3 "form"-Erweiterung
+##:memo: Based on the TYPO3 form extension
 
-Das Formular basiert auf der [TYPO3 form-Erweiterung](https://docs.typo3.org/c/typo3/cms-form/master/en-us/). Dies ermöglicht es dir zusätzliche Felder, Finisher, Validator, etc hinzuzufügen. 
-Darüber hinaus steht dir eine umfassende Dokumentation bereit. 
+The comment form is based on the [TYPO3 form extension](https://docs.typo3.org/c/typo3/cms-form/master/en-us/). This enables you to add additional fields, finishers or validators as you wish. To add to this, there's also a comprehensive documentation for it available.
 
-Ist die form-Erweiterung im Projekt schon im Einsatz, könnte ein bereits fertig gestyltes Kommentar-Formular noch ein ganz angenehmer Nebeneffekt sein.
+Is the form extension already in your project, an already styled comment form might be nice side effect.
 
 ## :wrench: Installation
 
@@ -32,11 +30,11 @@ Get this extension via `composer req zeroseven/z7-blog-comments`.
 
 ## :gear: Setup
 
-### Kommentare integrieren
+### Integrate comments
 
-Dies kannst du per TypoScript oder über einen ViewHelper machen. Für mehr Infos schau dazu in die README der Erweiterung [z7_blog](https://github.com/zeroseven/z7_blog).
+You can achieve this via typoscript or via a ViewHelper. For more information on this, please check the README of our [z7_blog](https://github.com/zeroseven/z7_blog) extension.
 
-Hier ein Beispiel für die Integration in fluid:
+Here is an example for an integration in fluid:
 
 ```html
 <html xmlns:blog="http://typo3.org/ns/Zeroseven/Z7Blog/ViewHelpers" data-namespace-typo3-fluid="true">
@@ -51,15 +49,15 @@ Hier ein Beispiel für die Integration in fluid:
 </html>
 ```
 
-### Kommentare erweitern
+### Extend comments
 
-Alles was du dafür machen musst, ist es zuerst das Comment-Domain-Model zu erweitern. Den Name einer neuen Property musst du dann nur noch als indentifer entsprechend für ein neues Formular-Feld verwenden.
-Beim Versenden des Formulars werden für alle Eingabe-Daten anhand des identifiers die enstsprechenden Propertis im Domain-Model gefüllt und in die Datenbank gespeichert. 
+All you have to do for this, is to extend the domain model of Comment and use this new property as the identifier for the corresponding form field.
+When sending a form, all entered data will be assigned to the corresponding properties in the domain model and saved to the database.
 
-### Configure Form:
+### Configure form:
 
-Not much to be done here. It's probably wise to override the form and finisher to fit in your project. 
-To use another form, you can alter this TypoScript constant `plugin.tx_z7blog.settings.comments.form` or [override the existing formDefinition in your TypoScript setup](https://docs.typo3.org/c/typo3/cms-form/master/en-us/I/Concepts/FrontendRendering/Index.html#typoscript-overrides) like the following example:
+There's not much to do here. It's advised to override the form and finisher to fit your needs in the project. 
+To use another form, you can alter this TypoScript constant `plugin.tx_z7blog.settings.comments.form` or [override the existing formDefinition in your TypoScript setup](https://docs.typo3.org/c/typo3/cms-form/master/en-us/I/Concepts/FrontendRendering/Index.html#typoscript-overrides) like shown the following example:
 
 ```typo3_typoscript
 lib.Z7BlogCommentsForm.settings.formDefinitionOverrides.Z7BlogCommentsForm.finishers {
