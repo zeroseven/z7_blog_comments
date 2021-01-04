@@ -18,7 +18,7 @@
   "require": {
     "typo3/cms-core": "^9.5 || ^10.4",
     "typo3/cms-form": "^9.5 || ^10.4",
-    "zeroseven/z7-blog": "^1.0",
+    "zeroseven/z7-blog": "^1.0 || ^1.1",
     "patrickschur/language-detection": "^4.0",
     "ext-json": "*"
   },
