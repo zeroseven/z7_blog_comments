@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace Zeroseven\Z7BlogComments\Widgets;
 
-use FriendsOfTYPO3\Widgets\Widgets\Provider\UsersOnlineDataProvider;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Dashboard\Widgets\AdditionalCssInterface;
+use TYPO3\CMS\Dashboard\Widgets\ListDataProviderInterface;
 use TYPO3\CMS\Dashboard\Widgets\RequireJsModuleInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper;
-use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 use Zeroseven\Z7BlogComments\Domain\Model\Comment;
 use Zeroseven\Z7BlogComments\Domain\Repository\CommentRepository;
@@ -28,7 +27,7 @@ class PendingComments implements WidgetInterface, RequireJsModuleInterface, Addi
     /** @var StandaloneView */
     private $view;
 
-    public function __construct(WidgetConfigurationInterface $configuration, UsersOnlineDataProvider $dataProvider, StandaloneView $view, $buttonProvider = null, array $options = [])
+    public function __construct(WidgetConfigurationInterface $configuration, ListDataProviderInterface $dataProvider = null, StandaloneView $view, $buttonProvider = null, array $options = [])
     {
         $this->configuration = $configuration;
         $this->view = $view;
