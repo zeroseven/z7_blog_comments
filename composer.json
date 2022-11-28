@@ -27,9 +27,6 @@
       "Zeroseven\\Z7BlogComments\\": "Classes"
     }
   },
-  "replace": {
-    "zeroseven/z7-blog-comments": "self.version"
-  },
   "extra": {
     "typo3/cms": {
       "extension-key": "z7_blog_comments"
